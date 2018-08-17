@@ -1,0 +1,5 @@
+This is the codebase for PSPECTRE. Originally described in https://arxiv.org/abs/arXiv:1005.1921 (Easther, Finkel and Roth) 
+this codebase includes a solver for a gravitational wave background, as used in https://arxiv.org/abs/1304.6094 (Zhou et al).
+
+Queries and questions on the code should be addressed to Hal Finkel hfinkel@anl.gov
+
