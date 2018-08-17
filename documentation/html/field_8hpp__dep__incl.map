@@ -1,0 +1,19 @@
+<map id="G" name="G">
+<area shape="rect" href="$defrost__style__initializer_8hpp.html" title="DEFROST&#45;style initial conditions." alt="" coords="5,161,211,188"/>
+<area shape="rect" href="$initializer_8hpp.html" title="Generic field&#45;initialization." alt="" coords="171,84,277,111"/>
+<area shape="rect" href="$le__style__initializer_8hpp.html" title="LatticeEasy&#45;style initialization." alt="" coords="235,161,403,188"/>
+<area shape="rect" href="$energy__outputter_8hpp.html" title="Outputter for the energy TSV file." alt="" coords="432,161,600,188"/>
+<area shape="rect" href="$v__integrator_8hpp.html" title="Integrate the potential energy over the field." alt="" coords="453,84,584,111"/>
+<area shape="rect" href="$verlet_8hpp.html" title="Second&#45;order Verlet integrator." alt="" coords="640,161,731,188"/>
+<area shape="rect" href="$rk4_8hpp.html" title="Fourth&#45;order Runge–Kutta (RK4) integrator." alt="" coords="787,161,856,188"/>
+<area shape="rect" href="$gpot__computer_8hpp.html" title="Gravitational&#45;potential computations." alt="" coords="1013,161,1165,188"/>
+<area shape="rect" href="$slice__output__manager_8hpp.html" title="Field slice output manager." alt="" coords="1223,239,1420,265"/>
+<area shape="rect" href="$model_8hpp.html" title="A particular simulated situation." alt="" coords="1044,316,1135,343"/>
+<area shape="rect" href="$grad__computer_8hpp.html" title="Computation of the gradient in Fourier space." alt="" coords="1117,84,1267,111"/>
+<area shape="rect" href="$integrator_8hpp.html" title="Generic time&#45;step evolution." alt="" coords="877,84,992,111"/>
+<area shape="rect" href="$slice__outputter_8hpp.html" title="Outputter for the file slices." alt="" coords="1341,161,1493,188"/>
+<area shape="rect" href="$nonlinear__transformer_8hpp.html" title="Momentum&#45;space representations of nonlinear field terms." alt="" coords="608,84,803,111"/>
+<area shape="rect" href="$spectra__outputter_8hpp.html" title="Outputter for the spectra TSV file." alt="" coords="1392,84,1565,111"/>
+<area shape="rect" href="$twoptcorr__outputter_8hpp.html" title="Outputter for the twoptcorr TSV file." alt="" coords="1589,84,1779,111"/>
+<area shape="rect" href="$stats__outputter_8hpp.html" title="Outputter for the stats TSV file." alt="" coords="1803,84,1960,111"/>
+</map>

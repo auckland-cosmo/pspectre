@@ -1,0 +1,159 @@
+\hypertarget{classfield}{
+\section{field$<$ R $>$ Class Template Reference}
+\label{classfield}\index{field@{field}}
+}
+
+
+A three-\/dimensional scalar field in both position and momentum space.  
+
+
+{\ttfamily \#include $<$field.hpp$>$}Collaboration diagram for field$<$ R $>$:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=110pt]{classfield__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfield_a4783d2c59b62ef73a4c3f4f7ca0b2fb7}{
+typedef \hyperlink{classfft__dft__r2c__3d__plan}{fft\_\-dft\_\-r2c\_\-3d\_\-plan}$<$ R $>$::complex\_\-t {\bfseries complex\_\-t}}
+\label{classfield_a4783d2c59b62ef73a4c3f4f7ca0b2fb7}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfield_a394818f5415834dcbc300bf5146f3357}{
+{\bfseries field} (\hyperlink{structfield__size}{field\_\-size} \&fs\_\-, bool oop=false, const char $\ast$name\_\-=0)}
+\label{classfield_a394818f5415834dcbc300bf5146f3357}
+
+\item 
+\hypertarget{classfield_a80228ae228b3e43f9bb04a3ab6a38a02}{
+{\bfseries field} (const char $\ast$name\_\-=0)}
+\label{classfield_a80228ae228b3e43f9bb04a3ab6a38a02}
+
+\item 
+\hypertarget{classfield_affd7a0214868da4208dc4bbd2ba938d4}{
+void {\bfseries construct} (\hyperlink{structfield__size}{field\_\-size} \&fs\_\-, bool oop=false)}
+\label{classfield_affd7a0214868da4208dc4bbd2ba938d4}
+
+\item 
+\hypertarget{classfield_a2a52cc6c193a8d2705db4eda9a96d256}{
+void {\bfseries divby} (R v)}
+\label{classfield_a2a52cc6c193a8d2705db4eda9a96d256}
+
+\item 
+\hypertarget{classfield_a3f6f257e24f5f6a3994c5361e84f0827}{
+void {\bfseries switch\_\-state} (field\_\-state state\_\-, bool mmo=false)}
+\label{classfield_a3f6f257e24f5f6a3994c5361e84f0827}
+
+\item 
+\hypertarget{classfield_a58f704053fd6528f5d80e8a3b981d4cd}{
+bool {\bfseries is\_\-in\_\-place} ()}
+\label{classfield_a58f704053fd6528f5d80e8a3b981d4cd}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfield_ae4706cc48462e7ff81aace174cc02c6b}{
+\hyperlink{structfield__size}{field\_\-size} {\bfseries fs}}
+\label{classfield_ae4706cc48462e7ff81aace174cc02c6b}
+
+\item 
+R $\ast$ \hyperlink{classfield_a5c465fa5d00104c5bbb683a6574a4057}{data}
+\begin{DoxyCompactList}\small\item\em The position-\/space data. \item\end{DoxyCompactList}\item 
+\hypertarget{classfield_abab5ca89b0c6dde39ce92a372d3446bf}{
+int \hyperlink{classfield_abab5ca89b0c6dde39ce92a372d3446bf}{ldl}}
+\label{classfield_abab5ca89b0c6dde39ce92a372d3446bf}
+
+\begin{DoxyCompactList}\small\item\em The length of the last dimension of the data array. \item\end{DoxyCompactList}\item 
+\hypertarget{classfield_a673a06623fbbe0daf28e2406c195582e}{
+int \hyperlink{classfield_a673a06623fbbe0daf28e2406c195582e}{pldl}}
+\label{classfield_a673a06623fbbe0daf28e2406c195582e}
+
+\begin{DoxyCompactList}\small\item\em The length of the last dimension of the padded data array. \item\end{DoxyCompactList}\item 
+\hypertarget{classfield_a49ff854ecfe1997596a425e34964af9b}{
+\hyperlink{classfft__dft__c2r__3d__plan}{fft\_\-dft\_\-c2r\_\-3d\_\-plan}$<$ R $>$::complex\_\-t $\ast$ \hyperlink{classfield_a49ff854ecfe1997596a425e34964af9b}{mdata}}
+\label{classfield_a49ff854ecfe1997596a425e34964af9b}
+
+\begin{DoxyCompactList}\small\item\em The momentum-\/space data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfield_a80741dda39b5efb7243d963bcb95dcca}{
+void {\bfseries pad\_\-momentum\_\-grid} ()}
+\label{classfield_a80741dda39b5efb7243d963bcb95dcca}
+
+\item 
+\hypertarget{classfield_a5a0acbcd951734bcc335b7925d8b69f2}{
+void {\bfseries unpad\_\-momentum\_\-grid} ()}
+\label{classfield_a5a0acbcd951734bcc335b7925d8b69f2}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfield_a0339f4775135e5eb7670b51fab6362d7}{
+field\_\-state {\bfseries state}}
+\label{classfield_a0339f4775135e5eb7670b51fab6362d7}
+
+\item 
+\hypertarget{classfield_abf982d33a1c406b4eb1f4c8c467ecf11}{
+\hyperlink{classfft__dft__r2c__3d__plan}{fft\_\-dft\_\-r2c\_\-3d\_\-plan}$<$ R $>$ {\bfseries p2m\_\-plan}}
+\label{classfield_abf982d33a1c406b4eb1f4c8c467ecf11}
+
+\item 
+\hypertarget{classfield_a22253ddf5199719f8d8dcd01247710ca}{
+\hyperlink{classfft__dft__c2r__3d__plan}{fft\_\-dft\_\-c2r\_\-3d\_\-plan}$<$ R $>$ {\bfseries m2p\_\-plan}}
+\label{classfield_a22253ddf5199719f8d8dcd01247710ca}
+
+\item 
+\hypertarget{classfield_a8e03a1aa26e2cf8030907656730da254}{
+\hyperlink{classfft__dft__r2c__3d__plan}{fft\_\-dft\_\-r2c\_\-3d\_\-plan}$<$ R $>$ {\bfseries padded\_\-p2m\_\-plan}}
+\label{classfield_a8e03a1aa26e2cf8030907656730da254}
+
+\item 
+\hypertarget{classfield_ab27e5897e1ad678ad2168862a1c97ca6}{
+\hyperlink{classfft__dft__c2r__3d__plan}{fft\_\-dft\_\-c2r\_\-3d\_\-plan}$<$ R $>$ {\bfseries padded\_\-m2p\_\-plan}}
+\label{classfield_ab27e5897e1ad678ad2168862a1c97ca6}
+
+\item 
+\hypertarget{classfield_a36ec9091d81140d37552b1d6ef673e8c}{
+\hyperlink{classfft__dft__c2r__3d__plan}{fft\_\-dft\_\-c2r\_\-3d\_\-plan}$<$ R $>$::complex\_\-t $\ast$ {\bfseries mdata\_\-saved}}
+\label{classfield_a36ec9091d81140d37552b1d6ef673e8c}
+
+\item 
+\hypertarget{classfield_a0a82ffffc6d875d5b333d48a80787cdd}{
+const char $\ast$ {\bfseries name}}
+\label{classfield_a0a82ffffc6d875d5b333d48a80787cdd}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename R$>$ class field$<$ R $>$}
+
+A three-\/dimensional scalar field in both position and momentum space. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classfield_a5c465fa5d00104c5bbb683a6574a4057}{
+\index{field@{field}!data@{data}}
+\index{data@{data}!field@{field}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename R$>$ R$\ast$ {\bf field}$<$ R $>$::{\bf data}}}
+\label{classfield_a5c465fa5d00104c5bbb683a6574a4057}
+
+
+The position-\/space data. \begin{DoxyNote}{Note}
+The inner (z) dimension is padded to a size of 2$\ast$(fs.n/2+1). 
+\end{DoxyNote}
+
+
+Referenced by defrost\_\-style\_\-initializer$<$ R $>$::sample\_\-grf().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{field_8hpp}{field.hpp}\item 
+field.cpp\end{DoxyCompactItemize}

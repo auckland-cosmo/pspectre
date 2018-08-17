@@ -1,0 +1,29 @@
+\hypertarget{building_make}{}\section{Make}\label{building_make}
+Building SpectRE requires GNU make. On systems where GNU make is not the system's default make command, GNU make is often called gmake.\hypertarget{building_reqs}{}\section{Requirements}\label{building_reqs}
+SpectRE should build and run on any POSIX-\/style operating system, and uses OpenMP for shared-\/memory parallelism. It requires: \begin{DoxyItemize}
+\item FFTW 3 or Intel's MKL version 10+. \item G++ (the GNU C++ compiler version 4+) or ICC (the Intel C++ compiler).\end{DoxyItemize}
+\hypertarget{building_targets}{}\section{Targets}\label{building_targets}
+The following (phony) targets are defined: \begin{DoxyItemize}
+\item rel -\/ Build the release (optimized) spectre executable. This is the default target. \item profile -\/ Build the optimized profiling executable spectre-\/pg. \item debug -\/ Build the debug spectre-\/dbg executable. \item debug-\/mudflap -\/ Build the mudflap-\/enabled debug executable spectre-\/dbg-\/mf. \item doc -\/ Build the documentation (doxygen and dot required). \item clean -\/ Remove all generated files (including executables) except for the documentation. \item clean-\/doc -\/ Remove the documentation files. \item clean-\/all -\/ A combination of clean and clean-\/doc. \item dist -\/ A combination of clean-\/all and doc followed by the creation of a source archive.\end{DoxyItemize}
+\hypertarget{building_vars}{}\section{Variables}\label{building_vars}
+The make file recognizes the following variables which can be specified on the command line prior to or after the target name(s): \begin{DoxyItemize}
+\item USE\_\-ICC=yes -\/ Use the Intel C++ compiler instead of the GNU C++ compiler. \item USE\_\-MKL=yes -\/ Use the Intel Math Kernel Libraries intead of FFTW. The MKL FFTW wrapper library is used, which is provided in source form with the MKL installation, and so the MKLROOT environmental variable must be set appropriately. \item USE\_\-LD=yes -\/ Enable long-\/double support (not supported when using MKL). If the fftwl-\/wisdom utility exists in a directory in the current search path, then long double support is active by default.\end{DoxyItemize}
+\hypertarget{building_bexamples}{}\section{Examples}\label{building_bexamples}
+To build spectre using g++ and FFTW: 
+\begin{DoxyCode}
+ make
+\end{DoxyCode}
+
+
+To build spectre using icc and the MKL: 
+\begin{DoxyCode}
+ make USE_ICC=yes USE_MKL=yes
+\end{DoxyCode}
+
+
+To build spectre-\/dbg using icc and FFTW: 
+\begin{DoxyCode}
+ make USE_ICC=yes debug
+\end{DoxyCode}
+\hypertarget{building_compiler}{}\section{Compiler Selection}\label{building_compiler}
+The name of the compiler used can be overridden by setting the GXX variable. By default, this variable has the value g++ or icc. If an executable called g++-\/4 is found in the current search path, then it is used in preference to g++. 

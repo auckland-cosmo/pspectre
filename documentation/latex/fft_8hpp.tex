@@ -1,0 +1,83 @@
+\hypertarget{fft_8hpp}{
+\section{fft.hpp File Reference}
+\label{fft_8hpp}\index{fft.hpp@{fft.hpp}}
+}
+
+
+FFT wrappers.  
+{\ttfamily \#include $<$fftw3.h$>$}\par
+Include dependency graph for fft.hpp:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=48pt]{fft_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{fft_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classfft__r2r__1d__plan}{fft\_\-r2r\_\-1d\_\-plan$<$ R $>$}
+\item 
+class \hyperlink{classfft__r2r__1d__plan_3_01double_01_4}{fft\_\-r2r\_\-1d\_\-plan$<$ double $>$}
+\item 
+class \hyperlink{classfft__dft__c2r__3d__plan}{fft\_\-dft\_\-c2r\_\-3d\_\-plan$<$ R $>$}
+\item 
+class \hyperlink{classfft__dft__c2r__3d__plan_3_01double_01_4}{fft\_\-dft\_\-c2r\_\-3d\_\-plan$<$ double $>$}
+\item 
+class \hyperlink{classfft__dft__r2c__3d__plan}{fft\_\-dft\_\-r2c\_\-3d\_\-plan$<$ R $>$}
+\item 
+class \hyperlink{classfft__dft__r2c__3d__plan_3_01double_01_4}{fft\_\-dft\_\-r2c\_\-3d\_\-plan$<$ double $>$}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries fft\_\-r2r\_\-kind} \{ \par
+{\bfseries r2hc} =  FFTW\_\-R2HC, 
+{\bfseries hc2r} =  FFTW\_\-HC2R, 
+{\bfseries dht} =  FFTW\_\-DHT, 
+{\bfseries redft00} =  FFTW\_\-REDFT00, 
+\par
+{\bfseries redft10} =  FFTW\_\-REDFT10, 
+{\bfseries redft01} =  FFTW\_\-REDFT01, 
+{\bfseries redft11} =  FFTW\_\-REDFT11, 
+{\bfseries rodft00} =  FFTW\_\-RODFT00, 
+\par
+{\bfseries rodft10} =  FFTW\_\-RODFT10, 
+{\bfseries rodft01} =  FFTW\_\-RODFT01, 
+{\bfseries rodft11} =  FFTW\_\-RODFT11
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{fft_8hpp_a45c093a4e007c43e392814a8ac6a262d}{
+{\footnotesize template$<$typename R $>$ }\\R $\ast$ {\bfseries fft\_\-malloc} (size\_\-t sz)}
+\label{fft_8hpp_a45c093a4e007c43e392814a8ac6a262d}
+
+\item 
+\hypertarget{fft_8hpp_a7834b27b8f324419b97af591726d9f08}{
+{\footnotesize template$<$$>$ }\\double $\ast$ {\bfseries fft\_\-malloc$<$ double $>$} (size\_\-t sz)}
+\label{fft_8hpp_a7834b27b8f324419b97af591726d9f08}
+
+\item 
+\hypertarget{fft_8hpp_adf5f200ea21dff70c558a0b21fe844dc}{
+{\footnotesize template$<$typename R $>$ }\\void {\bfseries fft\_\-free} (R $\ast$ptr)}
+\label{fft_8hpp_adf5f200ea21dff70c558a0b21fe844dc}
+
+\item 
+\hypertarget{fft_8hpp_a745a5f2046fbafdfcab7a5dc47bb4894}{
+{\footnotesize template$<$$>$ }\\void {\bfseries fft\_\-free$<$ double $>$} (double $\ast$ptr)}
+\label{fft_8hpp_a745a5f2046fbafdfcab7a5dc47bb4894}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+FFT wrappers. 

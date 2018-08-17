@@ -1,0 +1,213 @@
+\hypertarget{classmodel}{
+\section{model$<$ R $>$ Class Template Reference}
+\label{classmodel}\index{model@{model}}
+}
+Collaboration diagram for model$<$ R $>$:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=120pt]{classmodel__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmodel_a1a3966e2e1ce020c9db63b11b21af282}{
+{\bfseries model} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})}
+\label{classmodel_a1a3966e2e1ce020c9db63b11b21af282}
+
+\item 
+\hypertarget{classmodel_abaace1e276e1eb6010eb68049725d61d}{
+void {\bfseries run} ()}
+\label{classmodel_abaace1e276e1eb6010eb68049725d61d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmodel_a9d295f09eb260af90c184498422d2951}{
+void {\bfseries set\_\-output\_\-directory} (const char $\ast$uodn)}
+\label{classmodel_a9d295f09eb260af90c184498422d2951}
+
+\item 
+\hypertarget{classmodel_a2c46925e71c4af596e2e1ea55796d5fc}{
+void {\bfseries write\_\-info\_\-file} ()}
+\label{classmodel_a2c46925e71c4af596e2e1ea55796d5fc}
+
+\item 
+\hypertarget{classmodel_a26254dca4a7bb65302f8ac79ec7d880b}{
+void {\bfseries set\_\-initial\_\-conditions} ()}
+\label{classmodel_a26254dca4a7bb65302f8ac79ec7d880b}
+
+\item 
+\hypertarget{classmodel_a7205d404bf7eda6417fcb2162ad9baa7}{
+void {\bfseries evolve} (\hyperlink{classintegrator}{integrator}$<$ R $>$ $\ast$ig)}
+\label{classmodel_a7205d404bf7eda6417fcb2162ad9baa7}
+
+\item 
+\hypertarget{classmodel_a3d06bc461cb157407beea8e4fd3c1182}{
+void {\bfseries private\_\-allocate} ()}
+\label{classmodel_a3d06bc461cb157407beea8e4fd3c1182}
+
+\item 
+\hypertarget{classmodel_a2d7c0fefd194dc3220bd155d86ebf32a}{
+void {\bfseries private\_\-set\_\-sf\_\-info} ()}
+\label{classmodel_a2d7c0fefd194dc3220bd155d86ebf32a}
+
+\item 
+\hypertarget{classmodel_a2112bf622835919980b9dcad666420ba}{
+void {\bfseries private\_\-evolve} (int counter)}
+\label{classmodel_a2112bf622835919980b9dcad666420ba}
+
+\item 
+\hypertarget{classmodel_ae729d9cc3fa9b3733523236f300e0ceb}{
+void {\bfseries private\_\-info\_\-file\_\-output} (std::ofstream \&info\_\-file)}
+\label{classmodel_ae729d9cc3fa9b3733523236f300e0ceb}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmodel_a40d2f23dcbec53f421dfa25ecc57030e}{
+\hyperlink{structfield__size}{field\_\-size} {\bfseries fs}}
+\label{classmodel_a40d2f23dcbec53f421dfa25ecc57030e}
+
+\item 
+\hypertarget{classmodel_aa239be849b91caa21352765567ef584a}{
+\hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ {\bfseries mp}}
+\label{classmodel_aa239be849b91caa21352765567ef584a}
+
+\item 
+\hypertarget{classmodel_a7147930cb35a8f2aa47c4cfdc6d39c36}{
+\hyperlink{structtime__state}{time\_\-state}$<$ R $>$ {\bfseries ts}}
+\label{classmodel_a7147930cb35a8f2aa47c4cfdc6d39c36}
+
+\item 
+\hypertarget{classmodel_a9854a29ea87651d1ded6ca6c8790eb9b}{
+bool {\bfseries use\_\-verlet}}
+\label{classmodel_a9854a29ea87651d1ded6ca6c8790eb9b}
+
+\item 
+\hypertarget{classmodel_a3c6584aee08a90b08d8a5cc7d90e3a66}{
+bool {\bfseries le\_\-init}}
+\label{classmodel_a3c6584aee08a90b08d8a5cc7d90e3a66}
+
+\item 
+\hypertarget{classmodel_a92b75cf1df91519d2bf5a0659ad0d3b5}{
+bool {\bfseries homo\_\-ic\_\-phi}}
+\label{classmodel_a92b75cf1df91519d2bf5a0659ad0d3b5}
+
+\item 
+\hypertarget{classmodel_aeabac8cb1644e33a1d5db116debdf527}{
+bool {\bfseries homo\_\-ic\_\-chi}}
+\label{classmodel_aeabac8cb1644e33a1d5db116debdf527}
+
+\item 
+\hypertarget{classmodel_a111ad89eea9df0a5f40d30241f5884fa}{
+int {\bfseries seed}}
+\label{classmodel_a111ad89eea9df0a5f40d30241f5884fa}
+
+\item 
+\hypertarget{classmodel_a036cddd403fb7afcfaa62d909bba1a1b}{
+R {\bfseries tf}}
+\label{classmodel_a036cddd403fb7afcfaa62d909bba1a1b}
+
+\item 
+\hypertarget{classmodel_adaf2c0ea292512a3b0ad7b3eded33a38}{
+int {\bfseries scale\_\-interval}}
+\label{classmodel_adaf2c0ea292512a3b0ad7b3eded33a38}
+
+\item 
+\hypertarget{classmodel_abb1fa70dcb164b154962239d89549bba}{
+int {\bfseries energy\_\-interval}}
+\label{classmodel_abb1fa70dcb164b154962239d89549bba}
+
+\item 
+\hypertarget{classmodel_a6034345aff4e730e2d134fe4747173b3}{
+int {\bfseries spectra\_\-interval}}
+\label{classmodel_a6034345aff4e730e2d134fe4747173b3}
+
+\item 
+\hypertarget{classmodel_a6c573a2fe4aaed01e1f2fcde9f1228df}{
+int {\bfseries screen\_\-interval}}
+\label{classmodel_a6c573a2fe4aaed01e1f2fcde9f1228df}
+
+\item 
+\hypertarget{classmodel_a9561d067a967f20b946b94a2305d5501}{
+int {\bfseries slice\_\-interval}}
+\label{classmodel_a9561d067a967f20b946b94a2305d5501}
+
+\item 
+\hypertarget{classmodel_a5e477d9d154064d70e8da87fdc363603}{
+int {\bfseries stats\_\-interval}}
+\label{classmodel_a5e477d9d154064d70e8da87fdc363603}
+
+\item 
+\hypertarget{classmodel_abac663e2b450708b3d26a1c90c52541c}{
+int {\bfseries twoptcorr\_\-interval}}
+\label{classmodel_abac663e2b450708b3d26a1c90c52541c}
+
+\item 
+\hypertarget{classmodel_ae4eadf04cea985864f0fe3bc488aac5f}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries phi}}
+\label{classmodel_ae4eadf04cea985864f0fe3bc488aac5f}
+
+\item 
+\hypertarget{classmodel_a39a3d7f259f021693157b6b2d8a17285}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries phidot}}
+\label{classmodel_a39a3d7f259f021693157b6b2d8a17285}
+
+\item 
+\hypertarget{classmodel_aea7e2cf8648a963f20295d375bb3ad6b}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries chi}}
+\label{classmodel_aea7e2cf8648a963f20295d375bb3ad6b}
+
+\item 
+\hypertarget{classmodel_aeb232ddca67d5c55388e4e40f2a337c8}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries chidot}}
+\label{classmodel_aeb232ddca67d5c55388e4e40f2a337c8}
+
+\item 
+\hypertarget{classmodel_abbd490806cef7af3fb1c201190854451}{
+\hyperlink{classgrad__computer}{grad\_\-computer}$<$ R $>$ $\ast$ {\bfseries gc}}
+\label{classmodel_abbd490806cef7af3fb1c201190854451}
+
+\item 
+\hypertarget{classmodel_a0e84b2e244bbfaf6355a9dcfa558f860}{
+\hyperlink{classgpot__computer}{gpot\_\-computer}$<$ R $>$ $\ast$ {\bfseries gpotc}}
+\label{classmodel_a0e84b2e244bbfaf6355a9dcfa558f860}
+
+\item 
+\hypertarget{classmodel_ac0f228a8a23b4afaea409a0295efc73a}{
+\hyperlink{classslice__output__manager}{slice\_\-output\_\-manager}$<$ R $>$ $\ast$ {\bfseries som}}
+\label{classmodel_ac0f228a8a23b4afaea409a0295efc73a}
+
+\item 
+\hypertarget{classmodel_adb6d67be31d8af98fa25d81213f9bc61}{
+R {\bfseries ics\_\-scale}}
+\label{classmodel_adb6d67be31d8af98fa25d81213f9bc61}
+
+\item 
+\hypertarget{classmodel_aef6e146814fdda23f37ec3c5e2fafc3e}{
+R {\bfseries len0}}
+\label{classmodel_aef6e146814fdda23f37ec3c5e2fafc3e}
+
+\item 
+\hypertarget{classmodel_a99fba28df7c61a327a81f807bab45731}{
+bool {\bfseries vvwl}}
+\label{classmodel_a99fba28df7c61a327a81f807bab45731}
+
+\item 
+\hypertarget{classmodel_a232f10a2703e68837cd2b7e551632f6e}{
+R {\bfseries af}}
+\label{classmodel_a232f10a2703e68837cd2b7e551632f6e}
+
+\end{DoxyCompactItemize}
+\subsubsection*{template$<$typename R$>$ class model$<$ R $>$}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{model_8hpp}{model.hpp}\item 
+model.cpp\end{DoxyCompactItemize}

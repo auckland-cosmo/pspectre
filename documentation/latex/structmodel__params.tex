@@ -1,0 +1,154 @@
+\hypertarget{structmodel__params}{
+\section{model\_\-params$<$ R $>$ Struct Template Reference}
+\label{structmodel__params}\index{model\_\-params@{model\_\-params}}
+}
+
+
+Static model parameters.  
+
+
+{\ttfamily \#include $<$model\_\-params.hpp$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structmodel__params_a9bcd0871ce87aa307d0df35b7e073d72}{
+void {\bfseries calculate\_\-derived\_\-params} (bool report=false)}
+\label{structmodel__params_a9bcd0871ce87aa307d0df35b7e073d72}
+
+\item 
+R \hyperlink{structmodel__params_a2ca88aaf39658ce4bbe31cf92654040b}{V} (R phi, R chi, R a\_\-t)
+\begin{DoxyCompactList}\small\item\em Returns the value of the field potential at a point given the values of the fields at that point. \item\end{DoxyCompactList}\item 
+void \hyperlink{structmodel__params_a62e7a6b400316ea05112fa84110eb632}{derivs} (R phi, R chi, R phidot, R chidot, R chi2phi, R phi2chi, R phi3, R chi3, R phi5, R chi5, R a\_\-t, R adot\_\-t, R addot\_\-t, R mom2, R \&dphidt, R \&dchidt, R \&dphidotdt, R \&dchidotdt)
+\begin{DoxyCompactList}\small\item\em This is where the equations of motion for the fields are actually evaluated. \item\end{DoxyCompactList}\item 
+R \hyperlink{structmodel__params_ad35516eb94a6c0dc6d5372d1376f1980}{adoubledot} (R a\_\-t, R adot\_\-t, R avg\_\-gradient\_\-phi, R avg\_\-gradient\_\-chi, R avg\_\-V)
+\begin{DoxyCompactList}\small\item\em Returns the second time derivative of the scale factor in program units. \item\end{DoxyCompactList}\item 
+R \hyperlink{structmodel__params_ac95d2efa5a5b568aea61917b3765544c}{adoubledot\_\-staggered} (R dt, R a\_\-t, R adot\_\-t, R avg\_\-gradient\_\-phi, R avg\_\-gradient\_\-chi, R avg\_\-V)
+\begin{DoxyCompactList}\small\item\em Returns the second time derivative of the scale factor in program units at a half-\/time-\/step. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structmodel__params_a97f9ba1a4a364b7cbf76abccf3e1d2cf}{
+R {\bfseries gamma\_\-phi}}
+\label{structmodel__params_a97f9ba1a4a364b7cbf76abccf3e1d2cf}
+
+\item 
+\hypertarget{structmodel__params_ad0afc68b30a56a1cfeac5f58ce65294f}{
+R {\bfseries gamma\_\-chi}}
+\label{structmodel__params_ad0afc68b30a56a1cfeac5f58ce65294f}
+
+\item 
+\hypertarget{structmodel__params_a0965a18e0629bdccfa4c3cec769f9df1}{
+R {\bfseries lambda\_\-phi}}
+\label{structmodel__params_a0965a18e0629bdccfa4c3cec769f9df1}
+
+\item 
+\hypertarget{structmodel__params_af81fcd0a7180f2dbe74fa2023ed61d62}{
+R {\bfseries lambda\_\-chi}}
+\label{structmodel__params_af81fcd0a7180f2dbe74fa2023ed61d62}
+
+\item 
+\hypertarget{structmodel__params_af2859f1548a8db284d37ac07a208c602}{
+R {\bfseries g}}
+\label{structmodel__params_af2859f1548a8db284d37ac07a208c602}
+
+\item 
+\hypertarget{structmodel__params_ace1f3f2abfe269d3220ca244b9c0b260}{
+R {\bfseries m\_\-phi}}
+\label{structmodel__params_ace1f3f2abfe269d3220ca244b9c0b260}
+
+\item 
+\hypertarget{structmodel__params_abf3681b51e3007234a8d00b4f2222010}{
+R {\bfseries m\_\-chi}}
+\label{structmodel__params_abf3681b51e3007234a8d00b4f2222010}
+
+\item 
+\hypertarget{structmodel__params_a72626d43f9eb6155a5c8d32e2572d81d}{
+R {\bfseries len}}
+\label{structmodel__params_a72626d43f9eb6155a5c8d32e2572d81d}
+
+\item 
+\hypertarget{structmodel__params_a971a600253fbd368f4fb5e47ba0b1baa}{
+R {\bfseries phi0}}
+\label{structmodel__params_a971a600253fbd368f4fb5e47ba0b1baa}
+
+\item 
+\hypertarget{structmodel__params_a405fbb91c3617b789a5cbb57a0ff90b7}{
+R {\bfseries chi0}}
+\label{structmodel__params_a405fbb91c3617b789a5cbb57a0ff90b7}
+
+\item 
+\hypertarget{structmodel__params_ac9d7f464deed6f980d58be574143ccb7}{
+R {\bfseries phidot0}}
+\label{structmodel__params_ac9d7f464deed6f980d58be574143ccb7}
+
+\item 
+\hypertarget{structmodel__params_accce5d3473fd8647b1e4f320bcbd759e}{
+R {\bfseries chidot0}}
+\label{structmodel__params_accce5d3473fd8647b1e4f320bcbd759e}
+
+\item 
+\hypertarget{structmodel__params_a6e8d9931d267a4505d7c64452bfb7b83}{
+R {\bfseries rescale\_\-A}}
+\label{structmodel__params_a6e8d9931d267a4505d7c64452bfb7b83}
+
+\item 
+\hypertarget{structmodel__params_a509331d00495287be0a05eaa7eae1a30}{
+R {\bfseries rescale\_\-B}}
+\label{structmodel__params_a509331d00495287be0a05eaa7eae1a30}
+
+\item 
+\hypertarget{structmodel__params_a16cff633c0cd714e4ce91e9dbb7754b3}{
+R {\bfseries rescale\_\-s}}
+\label{structmodel__params_a16cff633c0cd714e4ce91e9dbb7754b3}
+
+\item 
+\hypertarget{structmodel__params_a4007a83656c74edc8916064e2f676404}{
+R {\bfseries rescale\_\-r}}
+\label{structmodel__params_a4007a83656c74edc8916064e2f676404}
+
+\item 
+\hypertarget{structmodel__params_a8e474ab1a14b9ee0504a88afc1a41689}{
+R {\bfseries dp}}
+\label{structmodel__params_a8e474ab1a14b9ee0504a88afc1a41689}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename R$>$ struct model\_\-params$<$ R $>$}
+
+Static model parameters. 
+
+\subsection{Member Function Documentation}
+\hypertarget{structmodel__params_ad35516eb94a6c0dc6d5372d1376f1980}{
+\index{model\_\-params@{model\_\-params}!adoubledot@{adoubledot}}
+\index{adoubledot@{adoubledot}!model_params@{model\_\-params}}
+\subsubsection[{adoubledot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename R$>$ R {\bf model\_\-params}$<$ R $>$::adoubledot (R {\em a\_\-t}, \/  R {\em adot\_\-t}, \/  R {\em avg\_\-gradient\_\-phi}, \/  R {\em avg\_\-gradient\_\-chi}, \/  R {\em avg\_\-V})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structmodel__params_ad35516eb94a6c0dc6d5372d1376f1980}
+
+
+Returns the second time derivative of the scale factor in program units. See equation 6.26 of the LatticeEasy manual. \hypertarget{structmodel__params_ac95d2efa5a5b568aea61917b3765544c}{
+\index{model\_\-params@{model\_\-params}!adoubledot\_\-staggered@{adoubledot\_\-staggered}}
+\index{adoubledot\_\-staggered@{adoubledot\_\-staggered}!model_params@{model\_\-params}}
+\subsubsection[{adoubledot\_\-staggered}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename R$>$ R {\bf model\_\-params}$<$ R $>$::adoubledot\_\-staggered (R {\em dt}, \/  R {\em a\_\-t}, \/  R {\em adot\_\-t}, \/  R {\em avg\_\-gradient\_\-phi}, \/  R {\em avg\_\-gradient\_\-chi}, \/  R {\em avg\_\-V})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structmodel__params_ac95d2efa5a5b568aea61917b3765544c}
+
+
+Returns the second time derivative of the scale factor in program units at a half-\/time-\/step. See equation 6.35/6.36 of the LatticeEasy manual. \hypertarget{structmodel__params_a62e7a6b400316ea05112fa84110eb632}{
+\index{model\_\-params@{model\_\-params}!derivs@{derivs}}
+\index{derivs@{derivs}!model_params@{model\_\-params}}
+\subsubsection[{derivs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename R$>$ void {\bf model\_\-params}$<$ R $>$::derivs (R {\em phi}, \/  R {\em chi}, \/  R {\em phidot}, \/  R {\em chidot}, \/  R {\em chi2phi}, \/  R {\em phi2chi}, \/  R {\em phi3}, \/  R {\em chi3}, \/  R {\em phi5}, \/  R {\em chi5}, \/  R {\em a\_\-t}, \/  R {\em adot\_\-t}, \/  R {\em addot\_\-t}, \/  R {\em mom2}, \/  R \& {\em dphidt}, \/  R \& {\em dchidt}, \/  R \& {\em dphidotdt}, \/  R \& {\em dchidotdt})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structmodel__params_a62e7a6b400316ea05112fa84110eb632}
+
+
+This is where the equations of motion for the fields are actually evaluated. The first and second time derivatives of the fields are computed in accordance with the Klein-\/Gordon equation, which is written in program units and transformed to momentum-\/space. Note that the choice of program units has eliminated the first-\/time-\/derivative term from the second-\/time-\/derivative equation. \hypertarget{structmodel__params_a2ca88aaf39658ce4bbe31cf92654040b}{
+\index{model\_\-params@{model\_\-params}!V@{V}}
+\index{V@{V}!model_params@{model\_\-params}}
+\subsubsection[{V}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename R$>$ R {\bf model\_\-params}$<$ R $>$::V (R {\em phi}, \/  R {\em chi}, \/  R {\em a\_\-t})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{structmodel__params_a2ca88aaf39658ce4bbe31cf92654040b}
+
+
+Returns the value of the field potential at a point given the values of the fields at that point. The field values are sent in program units, and the potential is returned in program units. This is equation 6.5 from the LatticeEasy manual. 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{model__params_8hpp}{model\_\-params.hpp}\end{DoxyCompactItemize}

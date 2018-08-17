@@ -1,0 +1,113 @@
+\hypertarget{classslice__outputter}{
+\section{slice\_\-outputter$<$ R $>$ Class Template Reference}
+\label{classslice__outputter}\index{slice\_\-outputter@{slice\_\-outputter}}
+}
+Collaboration diagram for slice\_\-outputter$<$ R $>$:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=372pt]{classslice__outputter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classslice__outputter_a0917a3b6bc70da35b0b2344342d9ab87}{
+typedef R($\ast$ {\bfseries var\_\-func} )(\hyperlink{structfield__size}{field\_\-size} \&fs, \hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \&mp, \hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \&ts, R phi, R chi, R phidot, R chidot, R phigradx, R chigradx, R phigrady, R chigrady, R phigradz, R chigradz, R gpot)}
+\label{classslice__outputter_a0917a3b6bc70da35b0b2344342d9ab87}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classslice__outputter_a6ea080464c3e9dbe3d85414335e37e84}{
+{\bfseries slice\_\-outputter} (\hyperlink{structfield__size}{field\_\-size} \&fs\_\-, \hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \&mp\_\-, \hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \&ts\_\-, int slicelength\_\-, std::string varname\_\-, var\_\-func vf\_\-)}
+\label{classslice__outputter_a6ea080464c3e9dbe3d85414335e37e84}
+
+\item 
+\hypertarget{classslice__outputter_a4a9c77e60f5bc6b7f83e2063e5d6e334}{
+void {\bfseries begin} (int bin\_\-idx)}
+\label{classslice__outputter_a4a9c77e60f5bc6b7f83e2063e5d6e334}
+
+\item 
+\hypertarget{classslice__outputter_aa9fe19a69c103855544940ad2b32c01a}{
+void {\bfseries flush} ()}
+\label{classslice__outputter_aa9fe19a69c103855544940ad2b32c01a}
+
+\item 
+\hypertarget{classslice__outputter_a5d9762160a8e538880df5ff44b84f3c6}{
+void {\bfseries advance} ()}
+\label{classslice__outputter_a5d9762160a8e538880df5ff44b84f3c6}
+
+\item 
+\hypertarget{classslice__outputter_a8ec331e66afb581d8d70bd5630e7f857}{
+void {\bfseries accumulate} (R phi, R chi, R phidot, R chidot, R phigradx, R chigradx, R phigrady, R chigrady, R phigradz, R chigradz, R gpot)}
+\label{classslice__outputter_a8ec331e66afb581d8d70bd5630e7f857}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classslice__outputter_a957a690d81a02f59d57327de464738f4}{
+\hyperlink{structfield__size}{field\_\-size} \& {\bfseries fs}}
+\label{classslice__outputter_a957a690d81a02f59d57327de464738f4}
+
+\item 
+\hypertarget{classslice__outputter_ad86ae98d01e3cfa301f070df0c34e9da}{
+\hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \& {\bfseries mp}}
+\label{classslice__outputter_ad86ae98d01e3cfa301f070df0c34e9da}
+
+\item 
+\hypertarget{classslice__outputter_a83c1dda3296ff12af9729fbc2210205f}{
+\hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \& {\bfseries ts}}
+\label{classslice__outputter_a83c1dda3296ff12af9729fbc2210205f}
+
+\item 
+\hypertarget{classslice__outputter_adf3e27259b0f4318b4a9a00106df6d96}{
+int {\bfseries slicelength}}
+\label{classslice__outputter_adf3e27259b0f4318b4a9a00106df6d96}
+
+\item 
+\hypertarget{classslice__outputter_a4a70ac08cb89e853a490ece136cd5010}{
+std::string {\bfseries varname}}
+\label{classslice__outputter_a4a70ac08cb89e853a490ece136cd5010}
+
+\item 
+\hypertarget{classslice__outputter_a0b706216df5e16b436668b0d3bc6a16b}{
+var\_\-func {\bfseries vf}}
+\label{classslice__outputter_a0b706216df5e16b436668b0d3bc6a16b}
+
+\item 
+\hypertarget{classslice__outputter_a90523789057b3046d3f46dde7bfebd03}{
+R $\ast$ {\bfseries buffer}}
+\label{classslice__outputter_a90523789057b3046d3f46dde7bfebd03}
+
+\item 
+\hypertarget{classslice__outputter_ab6e8e5c34ae2e3e89cd376543eb0a937}{
+float $\ast$ {\bfseries bufferf}}
+\label{classslice__outputter_ab6e8e5c34ae2e3e89cd376543eb0a937}
+
+\item 
+\hypertarget{classslice__outputter_a6af61ed3f846ca2e1bedc34db4bfb30b}{
+std::ofstream {\bfseries of}}
+\label{classslice__outputter_a6af61ed3f846ca2e1bedc34db4bfb30b}
+
+\item 
+\hypertarget{classslice__outputter_ab54a5b462f4ca3f3ef4c433177b2ef42}{
+int {\bfseries cp}}
+\label{classslice__outputter_ab54a5b462f4ca3f3ef4c433177b2ef42}
+
+\item 
+\hypertarget{classslice__outputter_a847f8e4abb0bcf1f9ee5ee3269949c6b}{
+int {\bfseries cn}}
+\label{classslice__outputter_a847f8e4abb0bcf1f9ee5ee3269949c6b}
+
+\end{DoxyCompactItemize}
+\subsubsection*{template$<$typename R$>$ class slice\_\-outputter$<$ R $>$}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{slice__outputter_8hpp}{slice\_\-outputter.hpp}\item 
+slice\_\-outputter.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,113 @@
+\hypertarget{classenergy__outputter}{
+\section{energy\_\-outputter$<$ R $>$ Class Template Reference}
+\label{classenergy__outputter}\index{energy\_\-outputter@{energy\_\-outputter}}
+}
+
+
+Outputter for the energy TSV file.  
+
+
+{\ttfamily \#include $<$energy\_\-outputter.hpp$>$}Collaboration diagram for energy\_\-outputter$<$ R $>$:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classenergy__outputter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classenergy__outputter_aa0fa67cec7d405890909d6b600d81508}{
+{\bfseries energy\_\-outputter} (\hyperlink{structfield__size}{field\_\-size} \&fs\_\-, \hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \&mp\_\-, \hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \&ts\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phidot\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chidot\_\-)}
+\label{classenergy__outputter_aa0fa67cec7d405890909d6b600d81508}
+
+\item 
+void \hyperlink{classenergy__outputter_a51f379bb757589ecf32a074227005c2c}{output} (bool no\_\-output=false)
+\begin{DoxyCompactList}\small\item\em Compute the integrated energy density and write it to the file. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classenergy__outputter_ac58a42c4899705ea45ca4b4652203525}{
+R \hyperlink{classenergy__outputter_ac58a42c4899705ea45ca4b4652203525}{avg\_\-rho\_\-phys}}
+\label{classenergy__outputter_ac58a42c4899705ea45ca4b4652203525}
+
+\begin{DoxyCompactList}\small\item\em The average energy density in physical units. \item\end{DoxyCompactList}\item 
+\hypertarget{classenergy__outputter_ac9eefd9359cad3b1a16c829c9d5a8455}{
+R \hyperlink{classenergy__outputter_ac9eefd9359cad3b1a16c829c9d5a8455}{avg\_\-rho}}
+\label{classenergy__outputter_ac9eefd9359cad3b1a16c829c9d5a8455}
+
+\begin{DoxyCompactList}\small\item\em The average energy density normalized by the Friedmann equation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classenergy__outputter_ab158221fde24d51583bc88c5a27998d0}{
+\hyperlink{structfield__size}{field\_\-size} \& {\bfseries fs}}
+\label{classenergy__outputter_ab158221fde24d51583bc88c5a27998d0}
+
+\item 
+\hypertarget{classenergy__outputter_a33043573e3e6c9c17038b00bb0b4f2be}{
+\hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \& {\bfseries mp}}
+\label{classenergy__outputter_a33043573e3e6c9c17038b00bb0b4f2be}
+
+\item 
+\hypertarget{classenergy__outputter_a20ec80c25fb1145959e5311a2481c752}{
+\hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \& {\bfseries ts}}
+\label{classenergy__outputter_a20ec80c25fb1145959e5311a2481c752}
+
+\item 
+\hypertarget{classenergy__outputter_ab19288ead97fb856120c3729fd67c1a5}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries phi}}
+\label{classenergy__outputter_ab19288ead97fb856120c3729fd67c1a5}
+
+\item 
+\hypertarget{classenergy__outputter_ad79e7c9d78dcf5489e2b36dc46839012}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries chi}}
+\label{classenergy__outputter_ad79e7c9d78dcf5489e2b36dc46839012}
+
+\item 
+\hypertarget{classenergy__outputter_abe7780be8621c4fb5c80f83dbce3553e}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries phidot}}
+\label{classenergy__outputter_abe7780be8621c4fb5c80f83dbce3553e}
+
+\item 
+\hypertarget{classenergy__outputter_a4767530c969dc638c6ed6963ce8e371d}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries chidot}}
+\label{classenergy__outputter_a4767530c969dc638c6ed6963ce8e371d}
+
+\item 
+\hypertarget{classenergy__outputter_a5f553a2d5554a7d78a311257bfa3463f}{
+\hyperlink{classv__integrator}{v\_\-integrator}$<$ R $>$ {\bfseries vi}}
+\label{classenergy__outputter_a5f553a2d5554a7d78a311257bfa3463f}
+
+\item 
+\hypertarget{classenergy__outputter_ac07729ebb0aedd6e64726adbe552049c}{
+std::ofstream {\bfseries of}}
+\label{classenergy__outputter_ac07729ebb0aedd6e64726adbe552049c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename R$>$ class energy\_\-outputter$<$ R $>$}
+
+Outputter for the energy TSV file. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classenergy__outputter_a51f379bb757589ecf32a074227005c2c}{
+\index{energy\_\-outputter@{energy\_\-outputter}!output@{output}}
+\index{output@{output}!energy_outputter@{energy\_\-outputter}}
+\subsubsection[{output}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename R $>$ void {\bf energy\_\-outputter}$<$ R $>$::output (bool {\em no\_\-output} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classenergy__outputter_a51f379bb757589ecf32a074227005c2c}
+
+
+Compute the integrated energy density and write it to the file. 
+\begin{DoxyParams}{Parameters}
+\item[{\em no\_\-output}]If true the result is not output to the file. \end{DoxyParams}
+
+
+References energy\_\-outputter$<$ R $>$::avg\_\-rho, and energy\_\-outputter$<$ R $>$::avg\_\-rho\_\-phys.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{energy__outputter_8hpp}{energy\_\-outputter.hpp}\item 
+energy\_\-outputter.cpp\end{DoxyCompactItemize}

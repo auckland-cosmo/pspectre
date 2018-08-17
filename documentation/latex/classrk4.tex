@@ -1,0 +1,230 @@
+\hypertarget{classrk4}{
+\section{rk4$<$ R $>$ Class Template Reference}
+\label{classrk4}\index{rk4@{rk4}}
+}
+Inheritance diagram for rk4$<$ R $>$:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classrk4__inherit__graph}
+\end{center}
+\end{figure}
+Collaboration diagram for rk4$<$ R $>$:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classrk4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classrk4_a6b6538e79bab2ccb9b65b953f8871073}{
+{\bfseries rk4} (\hyperlink{structfield__size}{field\_\-size} \&fs\_\-, \hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \&mp\_\-, \hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \&ts\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phidot\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chidot\_\-)}
+\label{classrk4_a6b6538e79bab2ccb9b65b953f8871073}
+
+\item 
+\hypertarget{classrk4_a10c9b1ff5a625427a90f5d235c0d4aec}{
+virtual void {\bfseries step} ()}
+\label{classrk4_a10c9b1ff5a625427a90f5d235c0d4aec}
+
+\item 
+\hypertarget{classrk4_a1925c4efac74de9bec188b4c6c5a3b1c}{
+virtual void {\bfseries initialize} ()}
+\label{classrk4_a1925c4efac74de9bec188b4c6c5a3b1c}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classrk4_a32ca7b0812b646d626ef2581e9a7558d}{
+void {\bfseries substep\_\-scale} (R fac, \hyperlink{classfield}{field}$<$ R $>$ \&phip, \hyperlink{classfield}{field}$<$ R $>$ \&chip, R ap, R adotp, R ptp, R \&an, R \&adotn, R \&ptn, R \&dan, R \&dadotn, R \&dptn, R \&avg\_\-gradient\_\-phi, R \&avg\_\-gradient\_\-chi)}
+\label{classrk4_a32ca7b0812b646d626ef2581e9a7558d}
+
+\item 
+\hypertarget{classrk4_ab6588276335620de871fadf2065059b9}{
+void {\bfseries substep} (R fac, \hyperlink{classfield}{field}$<$ R $>$ \&phip, \hyperlink{classfield}{field}$<$ R $>$ \&chip, \hyperlink{classfield}{field}$<$ R $>$ \&phidotp, \hyperlink{classfield}{field}$<$ R $>$ \&chidotp, \hyperlink{classfield}{field}$<$ R $>$ \&phin, \hyperlink{classfield}{field}$<$ R $>$ \&chin, \hyperlink{classfield}{field}$<$ R $>$ \&phidotn, \hyperlink{classfield}{field}$<$ R $>$ \&chidotn, R ap, R adotp, R ptp, R \&an, R \&adotn, R \&ptn, R \&avg\_\-gradient\_\-phi, R \&avg\_\-gradient\_\-chi)}
+\label{classrk4_ab6588276335620de871fadf2065059b9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classrk4_afe0b3e6a2f96cea1ebe881ca0aef0862}{
+\hyperlink{structfield__size}{field\_\-size} \& {\bfseries fs}}
+\label{classrk4_afe0b3e6a2f96cea1ebe881ca0aef0862}
+
+\item 
+\hypertarget{classrk4_a9cdc6aaad4517190a829e845eab95447}{
+\hyperlink{structfield__size}{field\_\-size} {\bfseries upfs}}
+\label{classrk4_a9cdc6aaad4517190a829e845eab95447}
+
+\item 
+\hypertarget{classrk4_a581eef6e9ad6b101b04c93d051e4f634}{
+\hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \& {\bfseries mp}}
+\label{classrk4_a581eef6e9ad6b101b04c93d051e4f634}
+
+\item 
+\hypertarget{classrk4_a55651dfa97a653e008c40de715e60825}{
+\hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \& {\bfseries ts}}
+\label{classrk4_a55651dfa97a653e008c40de715e60825}
+
+\item 
+\hypertarget{classrk4_a9760be7b78db1d69e367e2e77442e0c1}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries phi}}
+\label{classrk4_a9760be7b78db1d69e367e2e77442e0c1}
+
+\item 
+\hypertarget{classrk4_acb8d6d981d3f0f1a0a117493e4e51e7f}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries phidot}}
+\label{classrk4_acb8d6d981d3f0f1a0a117493e4e51e7f}
+
+\item 
+\hypertarget{classrk4_a8c46486589b9dcb6c58c339373e0bdf8}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries chi}}
+\label{classrk4_a8c46486589b9dcb6c58c339373e0bdf8}
+
+\item 
+\hypertarget{classrk4_ad3b83eb5a6571a9549b3c69b019a51f3}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries chidot}}
+\label{classrk4_ad3b83eb5a6571a9549b3c69b019a51f3}
+
+\item 
+\hypertarget{classrk4_a699dedb5a35ca9ba4f79c4aef5d7865d}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries phi1}}
+\label{classrk4_a699dedb5a35ca9ba4f79c4aef5d7865d}
+
+\item 
+\hypertarget{classrk4_aaf72f8162b7ed592d19cf0d9c83b6d46}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries phidot1}}
+\label{classrk4_aaf72f8162b7ed592d19cf0d9c83b6d46}
+
+\item 
+\hypertarget{classrk4_a2a4283efb5c57af1208a2cee767a4e85}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries chi1}}
+\label{classrk4_a2a4283efb5c57af1208a2cee767a4e85}
+
+\item 
+\hypertarget{classrk4_acd47b50e18dccede25777f0da1b55331}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries chidot1}}
+\label{classrk4_acd47b50e18dccede25777f0da1b55331}
+
+\item 
+\hypertarget{classrk4_a770d191019daa7bd12a0efeb9ed87217}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries phi2}}
+\label{classrk4_a770d191019daa7bd12a0efeb9ed87217}
+
+\item 
+\hypertarget{classrk4_a6fb65966932e72bfbef4244434c8d51e}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries phidot2}}
+\label{classrk4_a6fb65966932e72bfbef4244434c8d51e}
+
+\item 
+\hypertarget{classrk4_a44ba4ba2640a3e0014270c43b26427cf}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries chi2}}
+\label{classrk4_a44ba4ba2640a3e0014270c43b26427cf}
+
+\item 
+\hypertarget{classrk4_af7bbc770e6294ab619da641bf4923eb3}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries chidot2}}
+\label{classrk4_af7bbc770e6294ab619da641bf4923eb3}
+
+\item 
+\hypertarget{classrk4_a08bea04f3eee6087c6a516493eedfd88}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries phi3}}
+\label{classrk4_a08bea04f3eee6087c6a516493eedfd88}
+
+\item 
+\hypertarget{classrk4_a106dcf5d9a31129ed0af0e3df3f0d147}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries phidot3}}
+\label{classrk4_a106dcf5d9a31129ed0af0e3df3f0d147}
+
+\item 
+\hypertarget{classrk4_af5c55d0ad747dd298a2d09f017177783}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries chi3}}
+\label{classrk4_af5c55d0ad747dd298a2d09f017177783}
+
+\item 
+\hypertarget{classrk4_a9a8e3aa6dd0323757e174e087ce3f10d}{
+\hyperlink{classfield}{field}$<$ R $>$ {\bfseries chidot3}}
+\label{classrk4_a9a8e3aa6dd0323757e174e087ce3f10d}
+
+\item 
+\hypertarget{classrk4_a214560be9771a0fd1e1d3450685da9c5}{
+\hyperlink{classnonlinear__transformer}{nonlinear\_\-transformer}$<$ R $>$ {\bfseries nlt}}
+\label{classrk4_a214560be9771a0fd1e1d3450685da9c5}
+
+\item 
+\hypertarget{classrk4_a5e52ad362e80169cc3f23b1c0f3a7a4f}{
+\hyperlink{classv__integrator}{v\_\-integrator}$<$ R $>$ {\bfseries vi}}
+\label{classrk4_a5e52ad362e80169cc3f23b1c0f3a7a4f}
+
+\item 
+\hypertarget{classrk4_a765791d03fef48a8f9593eaca27defc8}{
+R {\bfseries a1}}
+\label{classrk4_a765791d03fef48a8f9593eaca27defc8}
+
+\item 
+\hypertarget{classrk4_acfeb66ce99e18d056afcaa505d3b7a96}{
+R {\bfseries a2}}
+\label{classrk4_acfeb66ce99e18d056afcaa505d3b7a96}
+
+\item 
+\hypertarget{classrk4_a7e382e7de3e229aa630f9db784606132}{
+R {\bfseries a3}}
+\label{classrk4_a7e382e7de3e229aa630f9db784606132}
+
+\item 
+\hypertarget{classrk4_a8a815689314b092fa0efd0765a3ad72e}{
+R {\bfseries a4}}
+\label{classrk4_a8a815689314b092fa0efd0765a3ad72e}
+
+\item 
+\hypertarget{classrk4_ae4b5442df2eaad12af507fc6b6cc39f8}{
+R {\bfseries adot1}}
+\label{classrk4_ae4b5442df2eaad12af507fc6b6cc39f8}
+
+\item 
+\hypertarget{classrk4_a879967a2a1270776afa585f5850c727f}{
+R {\bfseries adot2}}
+\label{classrk4_a879967a2a1270776afa585f5850c727f}
+
+\item 
+\hypertarget{classrk4_a350891ddc4b25427b0079ab2fdcbe4a1}{
+R {\bfseries adot3}}
+\label{classrk4_a350891ddc4b25427b0079ab2fdcbe4a1}
+
+\item 
+\hypertarget{classrk4_a07c2ff2eacda1d97394b3dee74229cae}{
+R {\bfseries adot4}}
+\label{classrk4_a07c2ff2eacda1d97394b3dee74229cae}
+
+\item 
+\hypertarget{classrk4_aed79efad1fa1ea909519e1a6014534ed}{
+R {\bfseries pt1}}
+\label{classrk4_aed79efad1fa1ea909519e1a6014534ed}
+
+\item 
+\hypertarget{classrk4_afe0e73a59a9fbf83b4ad4d712a6c174f}{
+R {\bfseries pt2}}
+\label{classrk4_afe0e73a59a9fbf83b4ad4d712a6c174f}
+
+\item 
+\hypertarget{classrk4_af6d1c9355312c55dfc0d16655c267149}{
+R {\bfseries pt3}}
+\label{classrk4_af6d1c9355312c55dfc0d16655c267149}
+
+\item 
+\hypertarget{classrk4_a985405ea783dcb3c49a3675c98378012}{
+R {\bfseries pt4}}
+\label{classrk4_a985405ea783dcb3c49a3675c98378012}
+
+\end{DoxyCompactItemize}
+\subsubsection*{template$<$typename R$>$ class rk4$<$ R $>$}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rk4_8hpp}{rk4.hpp}\item 
+rk4.cpp\end{DoxyCompactItemize}

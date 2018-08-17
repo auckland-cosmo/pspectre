@@ -1,0 +1,128 @@
+\hypertarget{classslice__output__manager}{
+\section{slice\_\-output\_\-manager$<$ R $>$ Class Template Reference}
+\label{classslice__output__manager}\index{slice\_\-output\_\-manager@{slice\_\-output\_\-manager}}
+}
+Collaboration diagram for slice\_\-output\_\-manager$<$ R $>$:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classslice__output__manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classslice__output__manager_a52e08ac6e50f8f93dd50412350c03b1a}{
+typedef \hyperlink{classslice__outputter}{slice\_\-outputter}$<$ R $>$::var\_\-func {\bfseries var\_\-func}}
+\label{classslice__output__manager_a52e08ac6e50f8f93dd50412350c03b1a}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classslice__output__manager_ae47600d24648cf74ebca73e5023797b3}{
+{\bfseries slice\_\-output\_\-manager} (\hyperlink{structfield__size}{field\_\-size} \&fs\_\-, \hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \&mp\_\-, \hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \&ts\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phidot\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chidot\_\-, \hyperlink{classgrad__computer}{grad\_\-computer}$<$ R $>$ \&gc\_\-, \hyperlink{classgpot__computer}{gpot\_\-computer}$<$ R $>$ \&gpotc\_\-, int slicedim\_\-=3, int slicelength\_\-=0, int sliceskip\_\-=1, bool sliceaverage\_\-=true)}
+\label{classslice__output__manager_ae47600d24648cf74ebca73e5023797b3}
+
+\item 
+\hypertarget{classslice__output__manager_a0864d241251993f377fe46cb63b1cc3b}{
+void {\bfseries add\_\-outputter} (std::string varname, var\_\-func vf)}
+\label{classslice__output__manager_a0864d241251993f377fe46cb63b1cc3b}
+
+\item 
+\hypertarget{classslice__output__manager_a5ee2088a87d16e709caf41860063d4ab}{
+void {\bfseries output} ()}
+\label{classslice__output__manager_a5ee2088a87d16e709caf41860063d4ab}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classslice__output__manager_a6e478c6b654b96779a5210246e38966b}{
+\hyperlink{structfield__size}{field\_\-size} \& {\bfseries fs}}
+\label{classslice__output__manager_a6e478c6b654b96779a5210246e38966b}
+
+\item 
+\hypertarget{classslice__output__manager_a5013ff50d2d91fb02b40641ee76565e7}{
+\hyperlink{structfield__size}{field\_\-size} {\bfseries upfs}}
+\label{classslice__output__manager_a5013ff50d2d91fb02b40641ee76565e7}
+
+\item 
+\hypertarget{classslice__output__manager_aedfefca04cda214b143f51ff5e4d0abc}{
+\hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \& {\bfseries mp}}
+\label{classslice__output__manager_aedfefca04cda214b143f51ff5e4d0abc}
+
+\item 
+\hypertarget{classslice__output__manager_a2e319ab07b2f053b52887c53029b4d56}{
+\hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \& {\bfseries ts}}
+\label{classslice__output__manager_a2e319ab07b2f053b52887c53029b4d56}
+
+\item 
+\hypertarget{classslice__output__manager_acc6e7ed40233dd325ee649646848aa1c}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries phi}}
+\label{classslice__output__manager_acc6e7ed40233dd325ee649646848aa1c}
+
+\item 
+\hypertarget{classslice__output__manager_a32c5db379879919d9622301199db7a7b}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries chi}}
+\label{classslice__output__manager_a32c5db379879919d9622301199db7a7b}
+
+\item 
+\hypertarget{classslice__output__manager_a13e320a0a520f6b53df60e556332d4cc}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries phidot}}
+\label{classslice__output__manager_a13e320a0a520f6b53df60e556332d4cc}
+
+\item 
+\hypertarget{classslice__output__manager_a1bd87399bedf30886d9f412e25f2ad24}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries chidot}}
+\label{classslice__output__manager_a1bd87399bedf30886d9f412e25f2ad24}
+
+\item 
+\hypertarget{classslice__output__manager_aef9191da41665323b7b552c1cac39025}{
+\hyperlink{classgrad__computer}{grad\_\-computer}$<$ R $>$ \& {\bfseries gc}}
+\label{classslice__output__manager_aef9191da41665323b7b552c1cac39025}
+
+\item 
+\hypertarget{classslice__output__manager_a4c23fefda63c2c5cb29f73d73374913e}{
+\hyperlink{classgpot__computer}{gpot\_\-computer}$<$ R $>$ \& {\bfseries gpotc}}
+\label{classslice__output__manager_a4c23fefda63c2c5cb29f73d73374913e}
+
+\item 
+\hypertarget{classslice__output__manager_ab53afdf80adec6a9a06869a11a9c6394}{
+int {\bfseries slicedim}}
+\label{classslice__output__manager_ab53afdf80adec6a9a06869a11a9c6394}
+
+\item 
+\hypertarget{classslice__output__manager_ab16957b5fabbc0068c33ac4bf431085d}{
+int {\bfseries slicelength}}
+\label{classslice__output__manager_ab16957b5fabbc0068c33ac4bf431085d}
+
+\item 
+\hypertarget{classslice__output__manager_aa01a399598c39945b501b1ff9d2a0829}{
+int {\bfseries sliceskip}}
+\label{classslice__output__manager_aa01a399598c39945b501b1ff9d2a0829}
+
+\item 
+\hypertarget{classslice__output__manager_afdd5365b8dcbf9a1e948c476cd28ecc2}{
+bool {\bfseries sliceaverage}}
+\label{classslice__output__manager_afdd5365b8dcbf9a1e948c476cd28ecc2}
+
+\item 
+\hypertarget{classslice__output__manager_a1fe93dc74b0853ed83416439e286d898}{
+int {\bfseries bin\_\-idx}}
+\label{classslice__output__manager_a1fe93dc74b0853ed83416439e286d898}
+
+\item 
+\hypertarget{classslice__output__manager_a3c7aaa9dec8709ad63c587816808d77b}{
+std::vector$<$ \hyperlink{classslice__outputter}{slice\_\-outputter}$<$ R $>$ $\ast$ $>$ {\bfseries outputters}}
+\label{classslice__output__manager_a3c7aaa9dec8709ad63c587816808d77b}
+
+\end{DoxyCompactItemize}
+\subsubsection*{template$<$typename R$>$ class slice\_\-output\_\-manager$<$ R $>$}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{slice__output__manager_8hpp}{slice\_\-output\_\-manager.hpp}\item 
+slice\_\-output\_\-manager.cpp\end{DoxyCompactItemize}

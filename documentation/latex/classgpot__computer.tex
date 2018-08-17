@@ -1,0 +1,108 @@
+\hypertarget{classgpot__computer}{
+\section{gpot\_\-computer$<$ R $>$ Class Template Reference}
+\label{classgpot__computer}\index{gpot\_\-computer@{gpot\_\-computer}}
+}
+
+
+Computer of the gravitational potential from the energy density of the phi and chi fields.  
+
+
+{\ttfamily \#include $<$gpot\_\-computer.hpp$>$}Collaboration diagram for gpot\_\-computer$<$ R $>$:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classgpot__computer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classgpot__computer_a31be021e9e6658a22bd07354e7e955a1}{
+{\bfseries gpot\_\-computer} (\hyperlink{structfield__size}{field\_\-size} \&fs\_\-, \hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \&mp\_\-, \hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \&ts\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phidot\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chidot\_\-, \hyperlink{classgrad__computer}{grad\_\-computer}$<$ R $>$ \&gc\_\-)}
+\label{classgpot__computer_a31be021e9e6658a22bd07354e7e955a1}
+
+\item 
+void \hyperlink{classgpot__computer_adb1fb91c67e82a028c8c161007215915}{compute} (field\_\-state final\_\-state=position, bool grad\_\-computed=false)
+\begin{DoxyCompactList}\small\item\em Compute gpot. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classgpot__computer_af421e1381ed708d783c9012c4efdcb54}{
+\hyperlink{classfield}{field}$<$ R $>$ \hyperlink{classgpot__computer_af421e1381ed708d783c9012c4efdcb54}{gpot}}
+\label{classgpot__computer_af421e1381ed708d783c9012c4efdcb54}
+
+\begin{DoxyCompactList}\small\item\em The gravitational potential field. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classgpot__computer_a5c50ce30185dfa325c019c45d75466e7}{
+\hyperlink{structfield__size}{field\_\-size} \& {\bfseries fs}}
+\label{classgpot__computer_a5c50ce30185dfa325c019c45d75466e7}
+
+\item 
+\hypertarget{classgpot__computer_a7401742f10b1e94290093f90bbc138f0}{
+\hyperlink{structfield__size}{field\_\-size} {\bfseries upfs}}
+\label{classgpot__computer_a7401742f10b1e94290093f90bbc138f0}
+
+\item 
+\hypertarget{classgpot__computer_af78203b6f7cad7aee0c181caf21fba9d}{
+\hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \& {\bfseries mp}}
+\label{classgpot__computer_af78203b6f7cad7aee0c181caf21fba9d}
+
+\item 
+\hypertarget{classgpot__computer_ad974327de8b6a591f239e7607ca70a46}{
+\hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \& {\bfseries ts}}
+\label{classgpot__computer_ad974327de8b6a591f239e7607ca70a46}
+
+\item 
+\hypertarget{classgpot__computer_a335b053ba964f23aeddea3851a29179d}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries phi}}
+\label{classgpot__computer_a335b053ba964f23aeddea3851a29179d}
+
+\item 
+\hypertarget{classgpot__computer_ad1b3b3f9ba93ade8366471a96e91884b}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries chi}}
+\label{classgpot__computer_ad1b3b3f9ba93ade8366471a96e91884b}
+
+\item 
+\hypertarget{classgpot__computer_aceb973616c9b9c7f6b594296f15acfdc}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries phidot}}
+\label{classgpot__computer_aceb973616c9b9c7f6b594296f15acfdc}
+
+\item 
+\hypertarget{classgpot__computer_a083b742d02f75cc5c7df3ac5b63b74a6}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries chidot}}
+\label{classgpot__computer_a083b742d02f75cc5c7df3ac5b63b74a6}
+
+\item 
+\hypertarget{classgpot__computer_aa65ed6e5b1ed34a037bbd9241f256a74}{
+\hyperlink{classgrad__computer}{grad\_\-computer}$<$ R $>$ \& {\bfseries gc}}
+\label{classgpot__computer_aa65ed6e5b1ed34a037bbd9241f256a74}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename R$>$ class gpot\_\-computer$<$ R $>$}
+
+Computer of the gravitational potential from the energy density of the phi and chi fields. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classgpot__computer_adb1fb91c67e82a028c8c161007215915}{
+\index{gpot\_\-computer@{gpot\_\-computer}!compute@{compute}}
+\index{compute@{compute}!gpot_computer@{gpot\_\-computer}}
+\subsubsection[{compute}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename R $>$ void {\bf gpot\_\-computer}$<$ R $>$::compute (field\_\-state {\em final\_\-state} = {\ttfamily position}, \/  bool {\em grad\_\-computed} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classgpot__computer_adb1fb91c67e82a028c8c161007215915}
+
+
+Compute gpot. 
+\begin{DoxyParams}{Parameters}
+\item[{\em final\_\-state}]The final state of gpot. \item[{\em grad\_\-computed}]True if the gradient fields have already been computed (otherwise gc.compute() is called). \end{DoxyParams}
+
+
+References gpot\_\-computer$<$ R $>$::gpot.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gpot__computer_8hpp}{gpot\_\-computer.hpp}\item 
+gpot\_\-computer.cpp\end{DoxyCompactItemize}

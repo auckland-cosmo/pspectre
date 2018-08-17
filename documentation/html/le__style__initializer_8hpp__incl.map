@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$field__size_8hpp.html" title="Field grid size and derived size&#45;related quantities." alt="" coords="19,239,131,265"/>
+<area shape="rect" href="$model__params_8hpp.html" title="The physical model parameters." alt="" coords="336,84,483,111"/>
+<area shape="rect" href="$field_8hpp.html" title="Three&#45;dimensional scalar fields." alt="" coords="91,161,168,188"/>
+<area shape="rect" href="$initializer_8hpp.html" title="Generic field&#45;initialization." alt="" coords="141,84,248,111"/>
+<area shape="rect" href="$pow_8hpp.html" title="Template function to compute the integer power of its argument." alt="" coords="192,161,299,188"/>
+<area shape="rect" href="$fft_8hpp.html" title="FFT wrappers." alt="" coords="205,239,272,265"/>
+</map>

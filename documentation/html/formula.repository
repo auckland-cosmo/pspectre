@@ -1,0 +1,13 @@
+\form#0:$b_k$
+\form#1:$<b_k b^*_{k'}> = \delta(k - k')$
+\form#2:\[ \zeta(r) = \frac{1}{\sqrt{\pi}} \int dk \, k^2 (k^2 + m_{\mbox{eff}})^\gamma \frac{\sin(kr)}{kr} e^{-k^2/q^2} \]
+\form#3:$q$
+\form#4:$(k^2 + m^2)$
+\form#5:$ \phi'^2 $
+\form#6:$ \chi'^2 $
+\form#7:$ \phi\phi' $
+\form#8:$ \chi\chi' $
+\form#9:$ \phi^2 $
+\form#10:$ \chi^2 $
+\form#11:$ \nabla \phi $
+\form#12:$ \nabla \chi $

@@ -1,0 +1,7 @@
+version 20100913:
+	- Fixed Defrost-style ICs normalization (again)
+	- Fixed H_0 computation (included phidot dependence)
+	- Included unnormalized (physical) averaged energy components in energy.tsv
+	- Misc. makefile fixes related to the use of MKL
+	- Included example oscillon parameter files
+
