@@ -28,7 +28,7 @@
 using namespace std;
 
 template <typename R>
-void nonlinear_transformer<R>::transform(field<R> &phi, field<R> &chi, field_state final_state)
+void nonlinear_transformer<R>::transform(field<R> &phi, field<R> &chi, R a_t, field_state final_state)
 {
 	phi.switch_state(position, true);
 	chi.switch_state(position, true);
@@ -57,6 +57,16 @@ void nonlinear_transformer<R>::transform(field<R> &phi, field<R> &chi, field_sta
 	if (mp.gamma_chi != 0.0) {
 		chi5.switch_state(uninitialized);
 		chi5.switch_state(position);
+	}
+
+	if (mp.md_e_phi != 0.0) {
+		phi_md.switch_state(uninitialized);
+		phi_md.switch_state(position);
+	}
+
+	if (mp.md_e_chi != 0.0) {
+		chi_md.switch_state(uninitialized);
+		chi_md.switch_state(position);
 	}
 
 #ifdef _OPENMP
@@ -90,6 +100,16 @@ void nonlinear_transformer<R>::transform(field<R> &phi, field<R> &chi, field_sta
 				if (mp.gamma_chi != 0.0) {
 					chi5.data[idx] = pow<5>(c);
 				}
+
+				if (mp.md_e_phi != 0.0) {
+					phi_md.data[idx] = 2.0*mp.md_c_phi*mp.md_e_phi*p *
+						pow(1.0 + pow(a_t, -2. * mp.rescale_r)*pow<2>(p/mp.rescale_A)/pow<2>(mp.md_s_phi), mp.md_e_phi - 1.0);
+				}
+
+				if (mp.md_e_chi != 0.0) {
+					chi_md.data[idx] = 2.0*mp.md_c_chi*mp.md_e_chi*p *
+						pow(1.0 + pow(a_t, -2. * mp.rescale_r)*pow<2>(p/mp.rescale_A)/pow<2>(mp.md_s_chi), mp.md_e_chi - 1.0);
+				}
 			}
 		}
 	}
@@ -111,6 +131,14 @@ void nonlinear_transformer<R>::transform(field<R> &phi, field<R> &chi, field_sta
 	
 	if (mp.gamma_chi != 0.0) {
 		chi5.switch_state(final_state);
+	}
+
+	if (mp.md_e_phi != 0.0) {
+		phi_md.switch_state(final_state);
+	}
+
+	if (mp.md_e_chi != 0.0) {
+		chi_md.switch_state(final_state);
 	}
 }
 

@@ -31,7 +31,7 @@ template <typename R>
 void slice_output_manager<R>::add_outputter(std::string varname, var_func vf)
 {
 	outputters.push_back(
-		new slice_outputter<R>(fs, mp, ts, slicelength, varname, vf)
+		new slice_outputter<R>(fs, mp, ts, slicelength, varname, vf, sliceflt)
 	);
 }
 

@@ -2,11 +2,14 @@
 \section{model$<$ R $>$ Class Template Reference}
 \label{classmodel}\index{model@{model}}
 }
-Collaboration diagram for model$<$ R $>$:\nopagebreak
+
+
+Collaboration diagram for model$<$ R $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=120pt]{classmodel__coll__graph}
+\includegraphics[width=400pt]{classmodel__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -43,6 +46,11 @@ void {\bfseries set\_\-initial\_\-conditions} ()}
 \hypertarget{classmodel_a7205d404bf7eda6417fcb2162ad9baa7}{
 void {\bfseries evolve} (\hyperlink{classintegrator}{integrator}$<$ R $>$ $\ast$ig)}
 \label{classmodel_a7205d404bf7eda6417fcb2162ad9baa7}
+
+\item 
+\hypertarget{classmodel_aa16f656be92adeb0dc352480e343af9d}{
+void {\bfseries load\_\-initial\_\-slice\_\-file} (std::string \&ifn, \hyperlink{classfield}{field}$<$ R $>$ \&fld, R pf)}
+\label{classmodel_aa16f656be92adeb0dc352480e343af9d}
 
 \item 
 \hypertarget{classmodel_a3d06bc461cb157407beea8e4fd3c1182}{
@@ -148,6 +156,41 @@ int {\bfseries twoptcorr\_\-interval}}
 \label{classmodel_abac663e2b450708b3d26a1c90c52541c}
 
 \item 
+\hypertarget{classmodel_a32c9cb25d74703419261a56188cf08fd}{
+\hyperlink{structkeyed__value}{keyed\_\-value}$<$ R, int $>$ {\bfseries scale\_\-intervals}}
+\label{classmodel_a32c9cb25d74703419261a56188cf08fd}
+
+\item 
+\hypertarget{classmodel_aa3d0b02452be0ea6301ec2f9e5c4034d}{
+\hyperlink{structkeyed__value}{keyed\_\-value}$<$ R, int $>$ {\bfseries energy\_\-intervals}}
+\label{classmodel_aa3d0b02452be0ea6301ec2f9e5c4034d}
+
+\item 
+\hypertarget{classmodel_a71307003ff0cf775ac1ce91ee34bd0fd}{
+\hyperlink{structkeyed__value}{keyed\_\-value}$<$ R, int $>$ {\bfseries spectra\_\-intervals}}
+\label{classmodel_a71307003ff0cf775ac1ce91ee34bd0fd}
+
+\item 
+\hypertarget{classmodel_a486729c11cb76cce2cd07f127de92675}{
+\hyperlink{structkeyed__value}{keyed\_\-value}$<$ R, int $>$ {\bfseries screen\_\-intervals}}
+\label{classmodel_a486729c11cb76cce2cd07f127de92675}
+
+\item 
+\hypertarget{classmodel_abaa2d75f66beefce1e0a7ee6ffd8793b}{
+\hyperlink{structkeyed__value}{keyed\_\-value}$<$ R, int $>$ {\bfseries slice\_\-intervals}}
+\label{classmodel_abaa2d75f66beefce1e0a7ee6ffd8793b}
+
+\item 
+\hypertarget{classmodel_a20b78d7409e56144005ff30d26798e7c}{
+\hyperlink{structkeyed__value}{keyed\_\-value}$<$ R, int $>$ {\bfseries stats\_\-intervals}}
+\label{classmodel_a20b78d7409e56144005ff30d26798e7c}
+
+\item 
+\hypertarget{classmodel_a4bcea6b6c78361ff9ec2abd62ea9bcdf}{
+\hyperlink{structkeyed__value}{keyed\_\-value}$<$ R, int $>$ {\bfseries twoptcorr\_\-intervals}}
+\label{classmodel_a4bcea6b6c78361ff9ec2abd62ea9bcdf}
+
+\item 
 \hypertarget{classmodel_ae4eadf04cea985864f0fe3bc488aac5f}{
 \hyperlink{classfield}{field}$<$ R $>$ {\bfseries phi}}
 \label{classmodel_ae4eadf04cea985864f0fe3bc488aac5f}
@@ -201,6 +244,51 @@ bool {\bfseries vvwl}}
 \hypertarget{classmodel_a232f10a2703e68837cd2b7e551632f6e}{
 R {\bfseries af}}
 \label{classmodel_a232f10a2703e68837cd2b7e551632f6e}
+
+\item 
+\hypertarget{classmodel_a25ef09e5d42e6130a1129ae54bb9e492}{
+bool {\bfseries external\_\-H0}}
+\label{classmodel_a25ef09e5d42e6130a1129ae54bb9e492}
+
+\item 
+\hypertarget{classmodel_ae646b51edb2a2434b47dae381f3e89d8}{
+std::string {\bfseries phi0\_\-slice}}
+\label{classmodel_ae646b51edb2a2434b47dae381f3e89d8}
+
+\item 
+\hypertarget{classmodel_ac1af4ad9e5dfc5b747fc1310e7dbb539}{
+std::string {\bfseries chi0\_\-slice}}
+\label{classmodel_ac1af4ad9e5dfc5b747fc1310e7dbb539}
+
+\item 
+\hypertarget{classmodel_a539de22f85f9bec7cef20f336d748607}{
+std::string {\bfseries phidot0\_\-slice}}
+\label{classmodel_a539de22f85f9bec7cef20f336d748607}
+
+\item 
+\hypertarget{classmodel_a38d08cfb61889a77dbf8e4e4134b017d}{
+std::string {\bfseries chidot0\_\-slice}}
+\label{classmodel_a38d08cfb61889a77dbf8e4e4134b017d}
+
+\item 
+\hypertarget{classmodel_a5c8df3bcc830411106f51e11f51637a1}{
+std::string {\bfseries start\_\-wd}}
+\label{classmodel_a5c8df3bcc830411106f51e11f51637a1}
+
+\item 
+\hypertarget{classmodel_a046d1ed1160f5b32c10e97ed7c179f48}{
+int {\bfseries ics\_\-eff\_\-size}}
+\label{classmodel_a046d1ed1160f5b32c10e97ed7c179f48}
+
+\item 
+\hypertarget{classmodel_a4a902b5ffa20522d6fbbf74a82d4fdd6}{
+R {\bfseries phidot0pr}}
+\label{classmodel_a4a902b5ffa20522d6fbbf74a82d4fdd6}
+
+\item 
+\hypertarget{classmodel_a892f62f1d79750b23b715d239af22039}{
+R {\bfseries chidot0pr}}
+\label{classmodel_a892f62f1d79750b23b715d239af22039}
 
 \end{DoxyCompactItemize}
 \subsubsection*{template$<$typename R$>$ class model$<$ R $>$}

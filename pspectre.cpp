@@ -230,10 +230,10 @@ int main(int argc, char *argv[])
 }
 
 // Explicit instantiations
-template class model_params<double>;
-template class time_state<double>;
+template struct model_params<double>;
+template struct time_state<double>;
 #ifdef USE_LD
-template class model_params<long double>;
-template class time_state<long double>;
+template struct model_params<long double>;
+template struct time_state<long double>;
 #endif
 

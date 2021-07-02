@@ -51,7 +51,7 @@ public:
 
 public:
 	slice_outputter(field_size &fs_, model_params<R> &mp_, time_state<R> &ts_,
-		int slicelength_, std::string varname_, var_func vf_);
+		int slicelength_, std::string varname_, var_func vf_, bool flt_ = true);
 	
 	~slice_outputter();
 
@@ -73,6 +73,7 @@ protected:
 	float *bufferf;
 	std::ofstream of;
 	int cp, cn;
+	bool flt;
 };
 
 #endif // SLICE_OUTPUTTER_HPP

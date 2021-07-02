@@ -1,7 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" href="$field__size_8hpp.html" title="Field grid size and derived size&#45;related quantities." alt="" coords="440,161,552,188"/>
-<area shape="rect" href="$model__params_8hpp.html" title="The physical model parameters." alt="" coords="233,84,380,111"/>
-<area shape="rect" href="$field_8hpp.html" title="Three&#45;dimensional scalar fields." alt="" coords="541,84,619,111"/>
-<area shape="rect" href="$pow_8hpp.html" title="Template function to compute the integer power of its argument." alt="" coords="5,161,112,188"/>
-<area shape="rect" href="$fft_8hpp.html" title="FFT wrappers." alt="" coords="627,161,693,188"/>
+<area shape="rect" href="$field__size_8hpp.html" title="Field grid size and derived size&#45;related quantities." alt="" coords="148,161,260,188"/>
+<area shape="rect" href="$model__params_8hpp.html" title="The physical model parameters." alt="" coords="328,84,475,111"/>
+<area shape="rect" href="$field_8hpp.html" title="Three&#45;dimensional scalar fields." alt="" coords="123,84,200,111"/>
+<area shape="rect" href="$time__state_8hpp.html" title="Time&#45;varying model parameters." alt="" coords="640,84,765,111"/>
+<area shape="rect" href="$pow_8hpp.html" title="Template function to compute the integer power of its argument." alt="" coords="484,161,591,188"/>
+<area shape="rect" href="$fft_8hpp.html" title="FFT wrappers." alt="" coords="7,161,73,188"/>
 </map>

@@ -42,16 +42,22 @@ template <typename R>
 class stats_outputter {
 public:
 	stats_outputter(field_size &fs_, model_params<R> &mp_, time_state<R> &ts_,
-		field<R> &phi_, field<R> &chi_);
+		field<R> &phi_, field<R> &chi_, field<R> &phidot_, field<R> &chidot_);
 
 public:
 	void output();
+
+protected:
+	void compute(field<R> &fld1, field<R> &fld2, R &fld1_mean, R &fld2_mean,
+		R &fld1_var, R &fld2_var);
+	void compute_cov(field<R> &fld, field<R> &flddot, R &fld_flddot_cov);
 
 protected:
 	field_size &fs;
 	model_params<R> &mp;
 	time_state<R> &ts;
 	field<R> &phi, &chi;
+	field<R> &phidot, &chidot;
 	std::ofstream of;
 };
 

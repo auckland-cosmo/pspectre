@@ -1,3 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" href="$structfield__size.html" title="field_size" alt="" coords="15,7,97,33"/>
+<area shape="rect" href="$structkeyed__value.html" title="keyed_value\&lt; R, int \&gt;" alt="" coords="65,103,236,129"/>
+<area shape="rect" title="STL class." alt="" coords="321,103,412,129"/>
+<area shape="rect" title="STL class." alt="" coords="280,7,472,33"/>
+<area shape="rect" href="$structfield__size.html" title="field_size" alt="" coords="439,103,521,129"/>
 </map>

@@ -59,6 +59,7 @@ protected:
 	void write_info_file();
 	void set_initial_conditions();
 	void evolve(integrator<R> *ig);
+	void load_initial_slice_file(std::string &ifn, field<R> &fld, R pf);
 
 protected:
 	void private_allocate();
@@ -76,6 +77,9 @@ protected:
 	int scale_interval, energy_interval, spectra_interval,
 		screen_interval, slice_interval, stats_interval,
 		twoptcorr_interval;
+	keyed_value<R, int> scale_intervals, energy_intervals, spectra_intervals,
+                screen_intervals, slice_intervals, stats_intervals,
+                twoptcorr_intervals;
 
 protected:
 	field<R> phi, phidot;
@@ -87,6 +91,12 @@ protected:
 	R len0;
 	bool vvwl;
 	R af;
+	bool external_H0;
+	std::string phi0_slice, chi0_slice;
+	std::string phidot0_slice, chidot0_slice;
+	std::string start_wd;
+	int ics_eff_size;
+	R phidot0pr, chidot0pr;
 
 #ifdef HAVE_PRIVATE
 	private_globals<R> priv;

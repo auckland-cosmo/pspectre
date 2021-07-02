@@ -1,0 +1,87 @@
+# SpectRE Parameters File
+
+# Use the RK4 integrator (default is the Verlet integrator)
+# -r
+
+# Use LatticeEasy-style initial conditions (default is DEFROST-style initial conditions)
+-l
+
+# The base length scale (default is 1.0 to match LatticeEasy)
+# -B 100.0
+
+# Use homogeneous (zero variance) initial conditions
+#-H phi
+-H chi
+
+# The number of grid points per side of the box
+# 
+-N 128
+
+# The padding factor used for position-space integration
+# -P 2
+
+-o mon_check
+
+# The physical size of the box
+-L 12.5
+
+# The random seed
+# -R 5
+
+# Set dt with an optional start time in program units
+# 
+-t 0.0125
+
+# The final time in program units
+# 
+-T 2000.0
+
+# Set a parameter value
+-p gamma_phi=0
+-p gamma_chi=0
+-p lambda_phi=0
+-p lambda_chi=0
+-p g=0
+-p m_phi=0.000022139442217092964
+-p m_chi=0
+-p phi0=0.08211141279686777
+-p chi0=0
+-p phidot0=0.0176648818699687
+-p chidot0=0
+
+-p monodromy_exp_phi=0.5
+-p monodromy_scale_phi=0.003989422804014327
+
+# Enable slice output of a variable
+-s phi
+# -s chi
+# -s V
+# -s T_phi
+# -s T_chi
+# -s G_phi
+# -s G_chi
+-s rho
+# -s p
+# -s gpot
+
+# -S <name>[=<value>][,<name>[=<value>]]*: Set a slice output option value. Valid options are:
+# -S dim=3
+# -S length=16
+# -S skip=2
+# -S avg
+
+# Set an output interval
+-I all=200
+-I scale=10
+-I energy=10
+-I spectra=200
+# -I screen=100
+-I slice=200
+-I stats=10
+-I twoptcorr=1000
+
+# Enable long-double mode
+# --long
+
+-A 9.0
+

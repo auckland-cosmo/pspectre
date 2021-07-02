@@ -53,7 +53,7 @@ public:
 		chi2("chi2"), chidot2("chidot2"),
 		phi3("phi3"), phidot3("phidot3"),
 		chi3("chi3"), chidot3("chidot3"),
-		nlt(fs_, mp_), vi(fs_, mp_),
+		nlt(fs_, mp_, ts_), vi(fs_, mp_),
 		a1(0), a2(0), a3(0), a4(0), adot1(0), adot2(0), adot3(0), adot4(0),
 		pt1(0), pt2(0), pt3(0), pt4(0)
 		{

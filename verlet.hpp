@@ -48,7 +48,7 @@ public:
 		: fs(fs_), upfs(fs_.n), mp(mp_), ts(ts_), phi(phi_), phidot(phidot_), chi(chi_), chidot(chidot_),
 		phiddot("phiddot"), phidot_staggered("phidot_staggered"),
 		chiddot("chiddot"), chidot_staggered("chidot_staggered"),
-		nlt(fs_, mp_), vi(fs_, mp_),
+		nlt(fs_, mp_, ts_), vi(fs_, mp_),
 		addot(0), adot_staggered(0), dptdt(1./mp_.rescale_B), ddptdt(0), dptdt_staggered(0)
 	{
 		phiddot.construct(upfs);

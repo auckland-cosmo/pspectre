@@ -33,7 +33,7 @@ R grid_funcs<R>::compute_phi(field_size &fs, model_params<R> &mp, time_state<R> 
 		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
 		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
 {
-	return phi;
+	return pow(ts.a, -mp.rescale_r) * phi/mp.rescale_A;
 }
 
 template <typename R>
@@ -41,7 +41,31 @@ R grid_funcs<R>::compute_chi(field_size &fs, model_params<R> &mp, time_state<R> 
 		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
 		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
 {
-	return chi;
+	return pow(ts.a, -mp.rescale_r) * chi/mp.rescale_A;
+}
+
+template <typename R>
+R grid_funcs<R>::compute_phidot(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	// f'_pr = A/B [ a^{r-s} f' + r a^{r-1-s} a' f ] =>
+	// f'_pr/A = a^{r-s} f'/B + r a^{r-1-s} a'/B f =>
+	// a^{r-s} f'/B = f'_pr/A - r a^{r-1-s} a'/B f =>
+	// f'/B = a^{s-r} f'_pr/A - r a^{-1} a'/B f =>
+	// f'/B = a^{s-r} f'_pr/A - r a^{-1-r} a'/B f_pr/A
+
+	return pow(ts.a, mp.rescale_s - mp.rescale_r)*phidot/mp.rescale_A
+		- mp.rescale_r*pow(ts.a, -mp.rescale_r-1)*ts.adot * phi/mp.rescale_A;
+}
+
+template <typename R>
+R grid_funcs<R>::compute_chidot(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, mp.rescale_s - mp.rescale_r)*chidot/mp.rescale_A
+		- mp.rescale_r*pow(ts.a, -mp.rescale_r-1)*ts.adot * chi/mp.rescale_A;
 }
 
 template <typename R>
@@ -149,6 +173,186 @@ R grid_funcs<R>::compute_G_chi(field_size &fs, model_params<R> &mp, time_state<R
 }
 
 template <typename R>
+R grid_funcs<R>::compute_G_phi_phys_x(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -2.*mp.rescale_s - 2.) * 0.5 * (
+			pow<2>(phigradx)
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_phi_x(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return compute_energy_scaling(mp, ts) *
+		compute_G_phi_phys_x(fs, mp, ts, phi, chi, phidot, chidot,
+			phigradx, chigradx, phigrady, chigrady, phigradz, chigradz, gpot);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_chi_phys_x(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -2.*mp.rescale_s - 2.) * 0.5 * (
+			pow<2>(chigradx)
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_chi_x(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return compute_energy_scaling(mp, ts) *
+		compute_G_chi_phys_x(fs, mp, ts, phi, chi, phidot, chidot,
+			phigradx, chigradx, phigrady, chigrady, phigradz, chigradz, gpot);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_phi_phys_y(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -2.*mp.rescale_s - 2.) * 0.5 * (
+			pow<2>(phigrady)
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_phi_y(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return compute_energy_scaling(mp, ts) *
+		compute_G_phi_phys_y(fs, mp, ts, phi, chi, phidot, chidot,
+			phigradx, chigradx, phigrady, chigrady, phigradz, chigradz, gpot);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_chi_phys_y(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -2.*mp.rescale_s - 2.) * 0.5 * (
+			pow<2>(chigrady)
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_chi_y(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return compute_energy_scaling(mp, ts) *
+		compute_G_chi_phys_y(fs, mp, ts, phi, chi, phidot, chidot,
+			phigradx, chigradx, phigrady, chigrady, phigradz, chigradz, gpot);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_phi_phys_z(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -2.*mp.rescale_s - 2.) * 0.5 * (
+			pow<2>(phigradz)
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_phi_z(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return compute_energy_scaling(mp, ts) *
+		compute_G_phi_phys_z(fs, mp, ts, phi, chi, phidot, chidot,
+			phigradx, chigradx, phigrady, chigrady, phigradz, chigradz, gpot);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_chi_phys_z(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -2.*mp.rescale_s - 2.) * 0.5 * (
+			pow<2>(chigradz)
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_G_chi_z(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return compute_energy_scaling(mp, ts) *
+		compute_G_chi_phys_z(fs, mp, ts, phi, chi, phidot, chidot,
+			phigradx, chigradx, phigrady, chigrady, phigradz, chigradz, gpot);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_grad_phi_phys_x(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -mp.rescale_r)/mp.rescale_A * (
+			phigradx
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_grad_chi_phys_x(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -mp.rescale_r)/mp.rescale_A * (
+			chigradx
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_grad_phi_phys_y(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -mp.rescale_r)/mp.rescale_A * (
+			phigrady
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_grad_chi_phys_y(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -mp.rescale_r)/mp.rescale_A * (
+			chigrady
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_grad_phi_phys_z(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -mp.rescale_r)/mp.rescale_A * (
+			phigradz
+		);
+}
+
+template <typename R>
+R grid_funcs<R>::compute_grad_chi_phys_z(field_size &fs, model_params<R> &mp, time_state<R> &ts,
+		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
+		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
+{
+	return pow(ts.a, -mp.rescale_r)/mp.rescale_A * (
+			chigradz
+		);
+}
+
+template <typename R>
 R grid_funcs<R>::compute_rho_phys(field_size &fs, model_params<R> &mp, time_state<R> &ts,
 		R phi, R chi, R phidot, R chidot, R phigradx, R chigradx,
 		R phigrady, R chigrady, R phigradz, R chigradz, R gpot)
@@ -203,7 +407,7 @@ R grid_funcs<R>::compute_p(field_size &fs, model_params<R> &mp, time_state<R> &t
 }
 
 // Explicit instantiations
-template class grid_funcs<double>;
+template struct grid_funcs<double>;
 #ifdef USE_LD
-template class grid_funcs<long double>;
+template struct grid_funcs<long double>;
 #endif

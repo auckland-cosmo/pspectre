@@ -7,18 +7,28 @@
 DEFROST-\/style initial conditions.  
 
 
-{\ttfamily \#include $<$defrost\_\-style\_\-initializer.hpp$>$}Inheritance diagram for defrost\_\-style\_\-initializer$<$ R $>$:\nopagebreak
+
+
+{\ttfamily \#include $<$defrost\_\-style\_\-initializer.hpp$>$}
+
+
+
+Inheritance diagram for defrost\_\-style\_\-initializer$<$ R $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=208pt]{classdefrost__style__initializer__inherit__graph}
+\includegraphics[width=244pt]{classdefrost__style__initializer__inherit__graph}
 \end{center}
 \end{figure}
-Collaboration diagram for defrost\_\-style\_\-initializer$<$ R $>$:\nopagebreak
+
+
+Collaboration diagram for defrost\_\-style\_\-initializer$<$ R $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=218pt]{classdefrost__style__initializer__coll__graph}
+\includegraphics[width=254pt]{classdefrost__style__initializer__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -88,11 +98,19 @@ DEFROST-\/style initial conditions.
 \hypertarget{classdefrost__style__initializer_a37b1d166d031097073140552513bc132}{
 \index{defrost\_\-style\_\-initializer@{defrost\_\-style\_\-initializer}!sample\_\-grf@{sample\_\-grf}}
 \index{sample\_\-grf@{sample\_\-grf}!defrost_style_initializer@{defrost\_\-style\_\-initializer}}
-\subsubsection[{sample\_\-grf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename R $>$ void {\bf defrost\_\-style\_\-initializer}$<$ R $>$::sample\_\-grf ({\bf field}$<$ R $>$ \& {\em fld}, \/  R {\em gamma}, \/  R {\em m2eff})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, protected\mbox{]}}}}
+\subsubsection[{sample\_\-grf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename R $>$ void {\bf defrost\_\-style\_\-initializer}$<$ R $>$::sample\_\-grf (
+\begin{DoxyParamCaption}
+\item[{{\bf field}$<$ R $>$ \&}]{ fld, }
+\item[{R}]{ gamma, }
+\item[{R}]{ m2eff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
 \label{classdefrost__style__initializer_a37b1d166d031097073140552513bc132}
 
 
-Sample a Gaussian random field. Random Gaussian-\/mode amplitudes $b_k$ are chosen such that $<b_k b^*_{k'}> = \delta(k - k')$ using the Box-\/Muller transformation. The kernel function is defined as: \[ \zeta(r) = \frac{1}{\sqrt{\pi}} \int dk \, k^2 (k^2 + m_{\mbox{eff}})^\gamma \frac{\sin(kr)}{kr} e^{-k^2/q^2} \]
+Sample a Gaussian random field. 
+
+Random Gaussian-\/mode amplitudes $b_k$ are chosen such that $<b_k b^*_{k'}> = \delta(k - k')$ using the Box-\/Muller transformation. The kernel function is defined as: \[ \zeta(r) = \frac{1}{\sqrt{\pi}} \int dk \, k^2 (k^2 + m_{\mbox{eff}})^\gamma \frac{\sin(kr)}{kr} e^{-k^2/q^2} \]
 
 $q$ is chosen to be some scale below the Nyquist frequency.
 
@@ -103,7 +121,11 @@ $q$ is chosen to be some scale below the Nyquist frequency.
 
 References field$<$ R $>$::data, field$<$ R $>$::ldl, and field$<$ R $>$::mdata.
 
+
+
 Referenced by defrost\_\-style\_\-initializer$<$ R $>$::initialize().
+
+
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 

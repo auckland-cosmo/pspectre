@@ -93,8 +93,8 @@ void twoptcorr_outputter<R>::output()
 	for (int z = 0; z < fs.n; ++z) {
 		int idx = z + corr.ldl*(y + fs.n*x);
 		int d = int(sqrt(pow<2, R>(x) + pow<2, R>(y) + pow<2, R>(z)));
-		phi_total[d-1] += corr.data[idx];
-		counts[d-1] += 1;
+		if (d > 0) phi_total[d-1] += corr.data[idx];
+		if (d > 0) counts[d-1] += 1;
 	}
 
 	corr.switch_state(uninitialized);
@@ -121,7 +121,7 @@ void twoptcorr_outputter<R>::output()
 	for (int z = 0; z < fs.n; ++z) {
 		int idx = z + corr.ldl*(y + fs.n*x);
 		int d = int(sqrt(pow<2, R>(x) + pow<2, R>(y) + pow<2, R>(z)));
-		chi_total[d-1] += corr.data[idx];
+		if (d > 0) chi_total[d-1] += corr.data[idx];
 	}
 
 	R dx = mp.len/fs.n;

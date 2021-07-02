@@ -4,14 +4,14 @@ SpectRE Usage:
  ./pspectre [-h]
  ./pspectre [-r] [-l [-B <real>]] [-V] [-H <name>[,<name>]*] [-O] [-N <int>] [-P 
       <int>] [-L <real>] [-R <int>] [-o <dir name>] [-t <real>[:<real>]] [-T <real>] [-
-      A <real>] [-p <name>=<value>[,<name>=<value>]*] [-s <name>[,<name>]*] [-S <name>[
-      =<value>][,<name>[=<value>]]*] [-I <name>=<value>[,<name>=<value>]*] [--long] [@<
-      file name>]
+      A <real>] [-p <name>=<value>[,<name>=<value>]*] [-e] [-s <name>[,<name>]*] [-S <n
+      ame>[=<value>][,<name>[=<value>]]*] [-I <name>=<value>[,<name>=<value>]*] [--long
+      ] [@<file name>]
 \end{DoxyCode}
 
 
 \begin{DoxyItemize}
-\item -\/h: Display usage information and exit \item -\/r: Use the RK4 integrator (default is the Verlet integrator) \item -\/l: Use LatticeEasy-\/style initial conditions (default is DEFROST-\/style initial conditions) \item -\/B: The base length scale (default is 1.0 to match LatticeEasy) \item -\/V: Allow the field variance to change with L \item -\/H $<$name$>$\mbox{[},$<$name$>$\mbox{]}$\ast$: Use homogeneous (zero variance) initial conditions. Field names are: 
+\item -\/h: Display usage information and exit \item -\/r: Use the RK4 integrator (default is the Verlet integrator) \item -\/l: Use LatticeEasy-\/style initial conditions (default is DEFROST-\/style initial conditions) \item -\/B: The base length scale (default is 1.0 to match LatticeEasy) \item -\/V: Allow the field variance to change with L \item -\/e: Use power-\/law expansion \item -\/H $<$name$>$\mbox{[},$<$name$>$\mbox{]}$\ast$: Use homogeneous (zero variance) initial conditions. Field names are: 
 \begin{DoxyCode}
       phi
       chi
@@ -30,18 +30,62 @@ SpectRE Usage:
         phidot0
         chidot0
         ics_scale
+        monodromy_exp_phi
+        monodromy_exp_chi
+        monodromy_scale_phi
+        monodromy_scale_chi
+        H0
+        phi0_slice
+        chi0_slice
+        phidot0_slice
+        chidot0_slice
+        ics_eff_size
+        (a0 can be specified when H0 is specified by appending :\<a0\> to the H0 
+      value;
+         Hdot0 can be similarly appended for use with power-law background expans
+      ion)
+        (file paths provided for *_slice parameters cannot contain comma characte
+      rs)
+        (ics_eff_size is an integer <= N)
 \end{DoxyCode}
  \item -\/s $<$name$>$\mbox{[},$<$name$>$\mbox{]}$\ast$: Enable slice output of a variable. Valid variables are: 
 \begin{DoxyCode}
         phi
         chi
+        phidot
+        chidot
         V
+        V_phys
         T_phi
         T_chi
+        T_phi_phys
+        T_chi_phys
         G_phi
         G_chi
+        G_phi_phys
+        G_chi_phys
+        G_phi_x
+        G_chi_x
+        G_phi_phys_x
+        G_chi_phys_x
+        G_phi_y
+        G_chi_y
+        G_phi_phys_y
+        G_chi_phys_y
+        G_phi_z
+        G_chi_z
+        G_phi_phys_z
+        G_chi_phys_z
+        grad_phi_phys_x
+        grad_chi_phys_x
+        grad_phi_phys_y
+        grad_chi_phys_y
+        grad_phi_phys_z
+        grad_chi_phys_z
         rho
+        rho_phys
         p
+        p_phys
         gpot
 \end{DoxyCode}
  \item -\/S $<$name$>$\mbox{[}=$<$value$>$\mbox{]}\mbox{[},$<$name$>$\mbox{[}=$<$value$>$\mbox{]}\mbox{]}$\ast$: Set a slice output option value. Valid options are: 
@@ -50,9 +94,10 @@ SpectRE Usage:
         length
         skip
         avg
-        (avg does not take a value)
+        fullprec
+        (avg and fullprec do not take a value)
 \end{DoxyCode}
- \item -\/I $<$name$>$=$<$value$>$\mbox{[},$<$name$>$=$<$value$>$\mbox{]}$\ast$: Set an output interval. Valid intervals are: 
+ \item -\/I $<$name$>$=$<$value$>$\mbox{[}:$<$real$>$\mbox{]}\mbox{[},$<$name$>$=$<$value$>$\mbox{[}:$<$real$>$\mbox{]}\mbox{]}$\ast$: Set an output interval with an optional start time. Valid intervals are: 
 \begin{DoxyCode}
         scale
         energy

@@ -56,7 +56,8 @@ public:
 	virtual void initialize();
 
 protected:
-	void set_mode(int px, int py, int pz, int idx, bool real = false);
+	void set_mode(field<R> &fld, field<R> &flddot, R m_fld_eff, int px, int py, int pz, int idx, bool real = false);
+	void initialize_field(field<R> &fld, field<R> &flddot, R m_fld_eff);
 
 protected:
 	field_size &fs;

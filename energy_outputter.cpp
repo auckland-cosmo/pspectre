@@ -55,12 +55,14 @@ void energy_outputter<R>::output(bool no_output)
 	
 	R avg_phi_squared = 0.0, avg_chi_squared = 0.0,
 		avg_phidot_squared = 0.0, avg_chidot_squared = 0.0,
-		avg_gradient_phi = 0.0, avg_gradient_chi = 0.0,
+		avg_gradient_phi_x = 0.0, avg_gradient_chi_x = 0.0,
+		avg_gradient_phi_y = 0.0, avg_gradient_chi_y = 0.0,
+		avg_gradient_phi_z = 0.0, avg_gradient_chi_z = 0.0,
 		avg_ffd_phi = 0.0, avg_ffd_chi = 0.0;
 
 		int tc = 0;
 #ifdef _OPENMP
-#pragma omp parallel for reduction(+:tc,avg_phi_squared,avg_chi_squared,avg_phidot_squared,avg_chidot_squared,avg_gradient_phi,avg_gradient_chi,avg_ffd_phi,avg_ffd_chi)
+#pragma omp parallel for reduction(+:tc,avg_phi_squared,avg_chi_squared,avg_phidot_squared,avg_chidot_squared,avg_gradient_phi_x,avg_gradient_chi_x,avg_gradient_phi_y,avg_gradient_chi_y,avg_gradient_phi_z,avg_gradient_chi_z,avg_ffd_phi,avg_ffd_chi)
 #endif
 
 	for (int x = 0; x < fs.n; ++x) {
@@ -91,9 +93,15 @@ void energy_outputter<R>::output(bool no_output)
 					chi.mdata[idx][1] * chidot.mdata[idx][1]
 				);
 				
-				R mom2 = pow<2>(mp.dp) * (pow<2>(px) + pow<2>(py) + pow<2>(pz));
-				avg_gradient_phi += cnt * mom2 * phi_squared;
-				avg_gradient_chi += cnt * mom2 * chi_squared;
+				R mom2x = pow<2>(mp.dp) * pow<2>(px);
+				R mom2y = pow<2>(mp.dp) * pow<2>(py);
+				R mom2z = pow<2>(mp.dp) * pow<2>(pz);
+				avg_gradient_phi_x += cnt * mom2x * phi_squared;
+				avg_gradient_chi_x += cnt * mom2x * chi_squared;
+				avg_gradient_phi_y += cnt * mom2y * phi_squared;
+				avg_gradient_chi_y += cnt * mom2y * chi_squared;
+				avg_gradient_phi_z += cnt * mom2z * phi_squared;
+				avg_gradient_chi_z += cnt * mom2z * chi_squared;
 			}
 		}
 	}
@@ -107,8 +115,12 @@ void energy_outputter<R>::output(bool no_output)
 	avg_chi_squared *= fld_fac / pow<2, R>(fs.total_gridpoints);
 
 	R grad_fac = 0.5 * pow(ts.a, -2. * mp.rescale_s - 2.);
-	avg_gradient_phi *= grad_fac / pow<2, R>(fs.total_gridpoints);
-	avg_gradient_chi *= grad_fac / pow<2, R>(fs.total_gridpoints);
+	avg_gradient_phi_x *= grad_fac / pow<2, R>(fs.total_gridpoints);
+	avg_gradient_chi_x *= grad_fac / pow<2, R>(fs.total_gridpoints);
+	avg_gradient_phi_y *= grad_fac / pow<2, R>(fs.total_gridpoints);
+	avg_gradient_chi_y *= grad_fac / pow<2, R>(fs.total_gridpoints);
+	avg_gradient_phi_z *= grad_fac / pow<2, R>(fs.total_gridpoints);
+	avg_gradient_chi_z *= grad_fac / pow<2, R>(fs.total_gridpoints);
 	
 	R ffd_fac = -mp.rescale_r * ts.adot/ts.a;
 	avg_ffd_phi *= ffd_fac / pow<2, R>(fs.total_gridpoints);
@@ -117,8 +129,20 @@ void energy_outputter<R>::output(bool no_output)
 	// This is the *average* energy per gridpoint.
 	avg_rho_phys = avg_V + avg_phi_squared + avg_chi_squared +
 		avg_phidot_squared + avg_chidot_squared +
-		avg_gradient_phi + avg_gradient_chi +
+		avg_gradient_phi_x + avg_gradient_chi_x +
+		avg_gradient_phi_y + avg_gradient_chi_y +
+		avg_gradient_phi_z + avg_gradient_chi_z +
 		avg_ffd_phi + avg_ffd_chi;
+
+	R avg_p_phys = -avg_V + avg_phi_squared + avg_chi_squared +
+		avg_phidot_squared + avg_chidot_squared -
+		(
+			avg_gradient_phi_x + avg_gradient_chi_x +
+			avg_gradient_phi_y + avg_gradient_chi_y +
+			avg_gradient_phi_z + avg_gradient_chi_z
+		)/3 +
+		avg_ffd_phi + avg_ffd_chi;
+	R avg_w = avg_p_phys/avg_rho_phys;
 
 	const R es = grid_funcs<R>::compute_energy_scaling(mp, ts);
 	avg_rho = es * avg_rho_phys;
@@ -133,8 +157,8 @@ void energy_outputter<R>::output(bool no_output)
 			es * avg_ffd_chi << "\t" <<
 			es * avg_phi_squared << "\t" <<
 			es * avg_chi_squared << "\t" <<
-			es * avg_gradient_phi << "\t" <<
-			es * avg_gradient_chi << "\t" <<
+			es * (avg_gradient_phi_x + avg_gradient_phi_y + avg_gradient_phi_z) << "\t" <<
+			es * (avg_gradient_chi_x + avg_gradient_chi_y + avg_gradient_chi_z) << "\t" <<
 			es * avg_V << "\t" <<
 			avg_phidot_squared << "\t" <<
 			avg_chidot_squared << "\t" <<
@@ -142,9 +166,21 @@ void energy_outputter<R>::output(bool no_output)
 			avg_ffd_chi << "\t" <<
 			avg_phi_squared << "\t" <<
 			avg_chi_squared << "\t" <<
-			avg_gradient_phi << "\t" <<
-			avg_gradient_chi << "\t" <<
-			avg_V << endl;
+			avg_gradient_phi_x + avg_gradient_phi_y + avg_gradient_phi_z << "\t" <<
+			avg_gradient_chi_x + avg_gradient_chi_y + avg_gradient_chi_z << "\t" <<
+			avg_V << "\t" <<
+
+			avg_gradient_phi_x << "\t" <<
+			avg_gradient_chi_x << "\t" <<
+			avg_gradient_phi_y << "\t" <<
+			avg_gradient_chi_y << "\t" <<
+			avg_gradient_phi_z << "\t" <<
+			avg_gradient_chi_z << "\t" <<
+
+			avg_p_phys << "\t" <<
+			avg_w <<
+
+			endl;
 		of.flush();
 	}
 }
@@ -174,6 +210,14 @@ void energy_outputter<R>::output(bool no_output)
  * @li Average physical @f$ \nabla \phi @f$ energy contribution
  * @li Average physical @f$ \nabla \chi @f$ energy contribution
  * @li Average physical potential-energy contribution
+ * @li Average physical @f$ \nabla \phi @f$ x-direction energy contribution
+ * @li Average physical @f$ \nabla \chi @f$ x-direction energy contribution
+ * @li Average physical @f$ \nabla \phi @f$ y-direction energy contribution
+ * @li Average physical @f$ \nabla \chi @f$ y-direction energy contribution
+ * @li Average physical @f$ \nabla \phi @f$ z-direction energy contribution
+ * @li Average physical @f$ \nabla \chi @f$ z-direction energy contribution
+ * @li Average physical pressure
+ * @li Average w (the e.o.s. parameter)
  */
 
 // Explicit instantiations

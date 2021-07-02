@@ -2,24 +2,40 @@
 \section{stats\_\-outputter$<$ R $>$ Class Template Reference}
 \label{classstats__outputter}\index{stats\_\-outputter@{stats\_\-outputter}}
 }
-Collaboration diagram for stats\_\-outputter$<$ R $>$:\nopagebreak
+
+
+Collaboration diagram for stats\_\-outputter$<$ R $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=250pt]{classstats__outputter__coll__graph}
+\includegraphics[width=286pt]{classstats__outputter__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classstats__outputter_a314e0484abd5002e82591e0e4bef02b5}{
-{\bfseries stats\_\-outputter} (\hyperlink{structfield__size}{field\_\-size} \&fs\_\-, \hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \&mp\_\-, \hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \&ts\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chi\_\-)}
-\label{classstats__outputter_a314e0484abd5002e82591e0e4bef02b5}
+\hypertarget{classstats__outputter_a12a507e68b035ff1d5bd588baf9e0a31}{
+{\bfseries stats\_\-outputter} (\hyperlink{structfield__size}{field\_\-size} \&fs\_\-, \hyperlink{structmodel__params}{model\_\-params}$<$ R $>$ \&mp\_\-, \hyperlink{structtime__state}{time\_\-state}$<$ R $>$ \&ts\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chi\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&phidot\_\-, \hyperlink{classfield}{field}$<$ R $>$ \&chidot\_\-)}
+\label{classstats__outputter_a12a507e68b035ff1d5bd588baf9e0a31}
 
 \item 
 \hypertarget{classstats__outputter_aaeccf7473d48bec8a138e30f93f9fb9a}{
 void {\bfseries output} ()}
 \label{classstats__outputter_aaeccf7473d48bec8a138e30f93f9fb9a}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classstats__outputter_af586161d6085407cffd6ffd35f674ad8}{
+void {\bfseries compute} (\hyperlink{classfield}{field}$<$ R $>$ \&fld1, \hyperlink{classfield}{field}$<$ R $>$ \&fld2, R \&fld1\_\-mean, R \&fld2\_\-mean, R \&fld1\_\-var, R \&fld2\_\-var)}
+\label{classstats__outputter_af586161d6085407cffd6ffd35f674ad8}
+
+\item 
+\hypertarget{classstats__outputter_a01cb22821bb0f8fb9179c6c94260955d}{
+void {\bfseries compute\_\-cov} (\hyperlink{classfield}{field}$<$ R $>$ \&fld, \hyperlink{classfield}{field}$<$ R $>$ \&flddot, R \&fld\_\-flddot\_\-cov)}
+\label{classstats__outputter_a01cb22821bb0f8fb9179c6c94260955d}
 
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
@@ -48,6 +64,16 @@ void {\bfseries output} ()}
 \hypertarget{classstats__outputter_a682704aa2c6cc2f8be5365bc5feabafe}{
 \hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries chi}}
 \label{classstats__outputter_a682704aa2c6cc2f8be5365bc5feabafe}
+
+\item 
+\hypertarget{classstats__outputter_aa0cbe6f9d6e3dadba3e8dc7bd0714ea4}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries phidot}}
+\label{classstats__outputter_aa0cbe6f9d6e3dadba3e8dc7bd0714ea4}
+
+\item 
+\hypertarget{classstats__outputter_a6f01b31c2ba0872a70cbd7b1734417e4}{
+\hyperlink{classfield}{field}$<$ R $>$ \& {\bfseries chidot}}
+\label{classstats__outputter_a6f01b31c2ba0872a70cbd7b1734417e4}
 
 \item 
 \hypertarget{classstats__outputter_a918c79e8ec6dbcffee8d10ac5a79db41}{

@@ -119,7 +119,7 @@ protected:
 	fft_dft_c2r_3d_plan<R> padded_m2p_plan;
 	typename fft_dft_c2r_3d_plan<R>::complex_t *mdata_saved;
 
-protected:
+public:
 	const char *name;
 };
 

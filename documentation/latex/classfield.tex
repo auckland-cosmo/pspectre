@@ -7,11 +7,18 @@
 A three-\/dimensional scalar field in both position and momentum space.  
 
 
-{\ttfamily \#include $<$field.hpp$>$}Collaboration diagram for field$<$ R $>$:\nopagebreak
+
+
+{\ttfamily \#include $<$field.hpp$>$}
+
+
+
+Collaboration diagram for field$<$ R $>$:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=110pt]{classfield__coll__graph}
+\includegraphics[width=146pt]{classfield__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
@@ -79,7 +86,12 @@ int \hyperlink{classfield_a673a06623fbbe0daf28e2406c195582e}{pldl}}
 \hyperlink{classfft__dft__c2r__3d__plan}{fft\_\-dft\_\-c2r\_\-3d\_\-plan}$<$ R $>$::complex\_\-t $\ast$ \hyperlink{classfield_a49ff854ecfe1997596a425e34964af9b}{mdata}}
 \label{classfield_a49ff854ecfe1997596a425e34964af9b}
 
-\begin{DoxyCompactList}\small\item\em The momentum-\/space data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The momentum-\/space data. \item\end{DoxyCompactList}\item 
+\hypertarget{classfield_a0a82ffffc6d875d5b333d48a80787cdd}{
+const char $\ast$ {\bfseries name}}
+\label{classfield_a0a82ffffc6d875d5b333d48a80787cdd}
+
+\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -125,11 +137,6 @@ field\_\-state {\bfseries state}}
 \hyperlink{classfft__dft__c2r__3d__plan}{fft\_\-dft\_\-c2r\_\-3d\_\-plan}$<$ R $>$::complex\_\-t $\ast$ {\bfseries mdata\_\-saved}}
 \label{classfield_a36ec9091d81140d37552b1d6ef673e8c}
 
-\item 
-\hypertarget{classfield_a0a82ffffc6d875d5b333d48a80787cdd}{
-const char $\ast$ {\bfseries name}}
-\label{classfield_a0a82ffffc6d875d5b333d48a80787cdd}
-
 \end{DoxyCompactItemize}
 
 
@@ -146,12 +153,16 @@ A three-\/dimensional scalar field in both position and momentum space.
 \label{classfield_a5c465fa5d00104c5bbb683a6574a4057}
 
 
-The position-\/space data. \begin{DoxyNote}{Note}
+The position-\/space data. 
+
+\begin{DoxyNote}{Note}
 The inner (z) dimension is padded to a size of 2$\ast$(fs.n/2+1). 
 \end{DoxyNote}
 
 
 Referenced by defrost\_\-style\_\-initializer$<$ R $>$::sample\_\-grf().
+
+
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 

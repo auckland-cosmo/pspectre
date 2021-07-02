@@ -63,7 +63,7 @@ void rk4<R>::step()
 		da4, dadot4, dpt4,
 		avg_gradient_phi, avg_gradient_chi);
 
-	nlt.transform(phi3, chi3);
+	nlt.transform(phi3, chi3, a3);
 
 	phi.switch_state(momentum, true);
 	chi.switch_state(momentum, true);
@@ -108,6 +108,8 @@ void rk4<R>::step()
 						mp.lambda_chi != 0 ? nlt.chi3.mdata[idx][c] : 0.0,
 						mp.gamma_phi != 0 ? nlt.phi5.mdata[idx][c] : 0.0,
 						mp.gamma_chi != 0 ? nlt.chi5.mdata[idx][c] : 0.0,
+						mp.md_e_phi != 0 ? nlt.phi_md.mdata[idx][c] : 0.0,
+						mp.md_e_chi != 0 ? nlt.chi_md.mdata[idx][c] : 0.0,
 						a3, adot3, dadot4/ts.dt, mom2,
 						dphi4, dchi4, dphidot4, dchidot4);
 	
@@ -163,7 +165,7 @@ void rk4<R>::substep_scale(R fac, field<R> &phip, field<R> &chip,
 	R avg_V = vi.integrate(phip, chip, ap);
 
 	dan = ts.dt*adotp;
-	ts.addot = mp.adoubledot(ap, adotp, avg_gradient_phi, avg_gradient_chi, avg_V);
+	ts.addot = mp.adoubledot(ts.t + (fac - 0.5)*ts.dt, ap, adotp, avg_gradient_phi, avg_gradient_chi, avg_V);
 	dadotn = ts.dt*ts.addot;
 	dptn = pow(ap, -mp.rescale_s)/mp.rescale_B * ts.dt;
 
@@ -182,7 +184,7 @@ void rk4<R>::substep(R fac, field<R> &phip, field<R> &chip, field<R> &phidotp, f
 		ap, adotp, ptp, an, adotn, ptn, dan, dadotn, dptn,
 		avg_gradient_phi, avg_gradient_chi);
 
-	nlt.transform(phip, chip);
+	nlt.transform(phip, chip, ap);
 
 	phip.switch_state(momentum, true);
 	chip.switch_state(momentum, true);
@@ -219,6 +221,8 @@ void rk4<R>::substep(R fac, field<R> &phip, field<R> &chip, field<R> &phidotp, f
 						mp.lambda_chi != 0 ? nlt.chi3.mdata[idx][c] : 0.0,
 						mp.gamma_phi != 0 ? nlt.phi5.mdata[idx][c] : 0.0,
 						mp.gamma_chi != 0 ? nlt.chi5.mdata[idx][c] : 0.0,
+						mp.md_e_phi != 0 ? nlt.phi_md.mdata[idx][c] : 0.0,
+						mp.md_e_chi != 0 ? nlt.chi_md.mdata[idx][c] : 0.0,
 						ap, adotp, dadotn/ts.dt, mom2,
 						dphi, dchi, dphidot, dchidot);
 	

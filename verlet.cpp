@@ -38,10 +38,10 @@ void verlet<R>::initialize()
 
 	R avg_V = vi.integrate(phi, chi, ts.a);
 
-	ts.addot = addot = mp.adoubledot(ts.a, ts.adot, avg_gradient_phi, avg_gradient_chi, avg_V);
+	ts.addot = addot = mp.adoubledot(ts.t, ts.a, ts.adot, avg_gradient_phi, avg_gradient_chi, avg_V);
 	ddptdt = -mp.rescale_s/mp.rescale_B * pow(ts.a, -mp.rescale_s - 1.) * ts.adot;
 
-	nlt.transform(phi, chi);
+	nlt.transform(phi, chi, ts.a);
 
 	phi.switch_state(momentum, true);
 	chi.switch_state(momentum, true);
@@ -74,6 +74,8 @@ void verlet<R>::initialize()
 						mp.lambda_chi != 0 ? nlt.chi3.mdata[idx][c] : 0.0,
 						mp.gamma_phi != 0 ? nlt.phi5.mdata[idx][c] : 0.0,
 						mp.gamma_chi != 0 ? nlt.chi5.mdata[idx][c] : 0.0,
+						mp.md_e_phi != 0 ? nlt.phi_md.mdata[idx][c] : 0.0,
+						mp.md_e_chi != 0 ? nlt.chi_md.mdata[idx][c] : 0.0,
 						ts.a, ts.adot, addot, mom2,
 						dphidt, dchidt, dphidotdt, dchidotdt);
 				
@@ -142,13 +144,13 @@ void verlet<R>::step()
 
 	R avg_V = vi.integrate(phi, chi, ts.a);
 
-	ts.addot = addot = mp.adoubledot_staggered(ts.dt, ts.a, adot_staggered, avg_gradient_phi, avg_gradient_chi, avg_V);
+	ts.addot = addot = mp.adoubledot_staggered(ts.t, ts.dt, ts.a, adot_staggered, avg_gradient_phi, avg_gradient_chi, avg_V);
 	ts.adot = adot_staggered + 0.5 * addot * ts.dt;
 
 	ddptdt = -mp.rescale_s / mp.rescale_B * pow(ts.a, -mp.rescale_s - 1) * ts.adot;
 	dptdt = dptdt_staggered + 0.5 * ddptdt * ts.dt;
 
-	nlt.transform(phi, chi);
+	nlt.transform(phi, chi, ts.a);
 
 	phi.switch_state(momentum, true);
 	chi.switch_state(momentum, true);
@@ -176,6 +178,8 @@ void verlet<R>::step()
 						mp.lambda_chi != 0 ? nlt.chi3.mdata[idx][c] : 0.0,
 						mp.gamma_phi != 0 ? nlt.phi5.mdata[idx][c] : 0.0,
 						mp.gamma_chi != 0 ? nlt.chi5.mdata[idx][c] : 0.0,
+						mp.md_e_phi != 0 ? nlt.phi_md.mdata[idx][c] : 0.0,
+						mp.md_e_chi != 0 ? nlt.chi_md.mdata[idx][c] : 0.0,
 						ts.a, ts.adot /* adot_staggered */, addot, mom2,
 						/* Verlet assumes that \ddot{x} is independent of \dot{x},
  						 * using adot here instead of adot_staggered turns out to be better.

@@ -100,6 +100,7 @@ void defrost_style_initializer<R>::sample_grf(field<R> &fld, R gamma, R m2eff)
 template <typename R>
 void defrost_style_initializer<R>::initialize()
 {
+	// TODO: update effective mass for other potential parameters.
 	sample_grf(phi, -0.25, (pow<2>(mp.g*mp.chi0) + pow<2>(mp.m_phi))/pow<2>(mp.rescale_B) - 2.25*pow<2>(adot));
 	sample_grf(chi, -0.25, (pow<2>(mp.g*mp.phi0) + pow<2>(mp.m_chi))/pow<2>(mp.rescale_B) - 2.25*pow<2>(adot));
 

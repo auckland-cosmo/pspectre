@@ -36,11 +36,80 @@
 
 #include <iostream>
 
+template <typename K, typename V>
+struct keyed_value
+{
+	keyed_value(V &v, K ik, V dv, const char *kn, const char *vn)
+	: value(v), initial_key(ik), default_value(dv), key_name(kn), value_name(vn) {}
+
+	V &value;
+	const K initial_key;
+	const V default_value;
+
+	void advance(K k)
+	{
+		if (values.size() > 0) {
+			if (values[0].first < k) {
+				value = values[0].second;
+				values.erase(values.begin());
+				
+				std::cout << value_name << " is now: " << value << std::endl;
+			}
+		}
+	}
+
+	void add_value(K start_key, V value_)
+	{
+		if (values.size() < 1) {
+			if (start_key == initial_key) {
+				value = value_;
+			}
+			else {
+				add_value(initial_key, default_value);
+			}
+		}
+		else {
+			for (typename std::vector< std::pair<K, V> >::iterator it = values.begin(); it != values.end(); ++it) {
+				if (it->first == start_key) {
+					it->second = value_;
+					break;
+				}
+			}
+
+			// Ignore if the start key is less than one previously specified.
+			if (start_key <= values[values.size()-1].first) {
+				return;
+			}
+		}
+
+		values.push_back(std::make_pair(start_key, value_));		
+	}
+
+	void finalize_values()
+	{
+		if (values.size() < 1) {
+			add_value(initial_key, default_value);
+		}
+	}
+
+	void summary(std::ostream& os)
+	{
+		for (typename std::vector< std::pair<K, V> >::iterator it = values.begin(); it != values.end(); ++it) {
+			os << value_name << ": " << it->second << " (starting at " << key_name << " = " << it->first << ")" << std::endl;
+		}
+	}
+
+protected:
+	const char *key_name, *value_name;
+	std::vector< std::pair<K, V> > values;
+};
+
 template <typename R>
 struct time_state
 {
 	time_state()
-	: t(0), physical_time(0), a(1), adot(0), addot(0), dt(0.0) {}
+	: t(0), physical_time(0), a(1), adot(0), addot(0), dt(0.0),
+	dtm(dt, 0.0, default_dt(), "t", "dt") {}
 	
 	R t, physical_time;
 	R a, adot, addot;
@@ -55,60 +124,26 @@ struct time_state
 	void advance()
 	{
 		t += dt;
-		
-		if (dts.size() > 0) {
-			if (dts[0].first < t) {
-				dt = dts[0].second;
-				dts.erase(dts.begin());
-				
-				std::cout << "dt is now: " << dt << std::endl;
-			}
-		}
+		dtm.advance(t);
 	}
 
 	void add_dt(R start_time, R dt_)
 	{
-		if (dts.size() < 1) {
-			if (start_time == 0.0) {
-				dt = dt_;
-			}
-			else {
-				add_dt(0.0, default_dt());
-			}
-		}
-		else {
-			for (typename std::vector< std::pair<R, R> >::iterator it = dts.begin(); it != dts.end(); ++it) {
-				if (it->first == start_time) {
-					it->second = dt_;
-					break;
-				}
-			}
-
-			// Ignore if the start time is less than one previously specified.
-			if (start_time <= dts[dts.size()-1].first) {
-				return;
-			}
-		}
-
-		dts.push_back(std::make_pair(start_time, dt_));		
+		dtm.add_value(start_time, dt_);
 	}
 
 	void finalize_dts()
 	{
-		if (dts.size() < 1) {
-			add_dt(0.0, default_dt());
-		}
+		dtm.finalize_values();
 	}
 
 	void dt_summary(std::ostream& os)
 	{
-		for (typename std::vector< std::pair<R, R> >::iterator it = dts.begin(); it != dts.end(); ++it) {
-			os << "dt: " << it->second << " (starting at t = " << it->first << ")" << std::endl;
-		}
+		dtm.summary(os);
 	}
 	
 protected:
-	std::vector< std::pair<R, R> > dts;
+	keyed_value<R, R> dtm;
 };
 
 #endif // TIME_STATE

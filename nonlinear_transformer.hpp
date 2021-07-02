@@ -34,13 +34,14 @@
 #include "field_size.hpp"
 #include "model_params.hpp"
 #include "field.hpp"
+#include "time_state.hpp"
 
 template <typename R>
 class nonlinear_transformer
 {
 public:
-	nonlinear_transformer(field_size &fs_, model_params<R> &mp_)
-		: fs(fs_), upfs(fs_.n), mp(mp_),
+	nonlinear_transformer(field_size &fs_, model_params<R> &mp_, time_state<R> &ts_)
+		: fs(fs_), upfs(fs_.n), mp(mp_), ts(ts_),
 		phi2chi("phi2chi"), chi2phi("chi2phi"),
 		phi3("phi3"), chi3("chi3"),
 		phi5("phi5"), chi5("chi5")
@@ -63,20 +64,30 @@ public:
 		if (mp.gamma_chi != 0.0) {
 			chi5.construct(upfs);
 		}
+
+		if (mp.md_e_phi != 0.0) {
+			phi_md.construct(upfs);
+		}
+
+		if (mp.md_e_chi != 0.0) {
+			chi_md.construct(upfs);
+		}
 	}
 
 public:	
-	void transform(field<R> &phi, field<R> &chi,
+	void transform(field<R> &phi, field<R> &chi, R a_t,
 		field_state final_state = momentum);
 
 protected:
 	field_size &fs, upfs;
 	model_params<R> &mp;
+	time_state<R> &ts;
 
 public:
 	field<R> phi2chi, chi2phi;
 	field<R> phi3, chi3;
 	field<R> phi5, chi5;
+	field<R> phi_md, chi_md;
 };
 
 #endif // NONLINEAR_TRANSFORMER_HPP

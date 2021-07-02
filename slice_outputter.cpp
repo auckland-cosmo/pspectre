@@ -32,12 +32,12 @@ using namespace std;
 
 template <typename R>
 slice_outputter<R>::slice_outputter(field_size &fs_, model_params<R> &mp_, time_state<R> &ts_,
-	int slicelength_, std::string varname_, var_func vf_)
+	int slicelength_, std::string varname_, var_func vf_, bool flt_)
 	: fs(fs_), mp(mp_), ts(ts_), slicelength(slicelength_), varname(varname_),
-	vf(vf_), cp(0), cn(0)
+	vf(vf_), cp(0), cn(0), flt(flt_)
 {
 	buffer = new R[slicelength];
-	bufferf = new float[slicelength];
+	if (flt) bufferf = new float[slicelength];
 	
 	cout << "Slice output enabled for: " << varname << endl;
 }
@@ -46,7 +46,7 @@ template <typename R>
 slice_outputter<R>::~slice_outputter()
 {
 	delete [] buffer;
-	delete [] bufferf;
+	if (flt) delete [] bufferf;
 }
 
 template <typename R>
@@ -69,11 +69,17 @@ void slice_outputter<R>::begin(int bin_idx)
 template <typename R>
 void slice_outputter<R>::flush()
 {
-	for (int i = 0; i < cp; ++i) {
-		bufferf[i] = (float) buffer[i];
+	if (flt) {
+		for (int i = 0; i < cp; ++i) {
+			bufferf[i] = (float) buffer[i];
+		}
+		
+		of.write((char *) bufferf, cp*sizeof(float));
 	}
-	
-	of.write((char *) bufferf, cp*sizeof(float));
+	else {
+		of.write((char *) buffer, cp*sizeof(R));
+	}
+
 	cp = cn = 0;
 	buffer[cp] = 0.0;
 }

@@ -26,6 +26,15 @@ GXX=icc
 GXX_OPT_FLAGS = $(shell sh ./testcompilecull.sh $(GXX) -openmp -ipo -xHost)
 GXX_WARN_FLAGS =
 GXX_EXTRA_LIBS = -lstdc++
+else ifeq ($(USE_CLANG),yes)
+GXX=clang
+ifneq ($(wildcard $(shell which clang++ 2>/dev/null | grep '^/')),)
+GXX=clang++
+endif
+
+GXX_OPT_FLAGS = $(shell sh ./testcompilecull.sh $(GXX) -march=native)
+GXX_WARN_FLAGS = -Wall
+GXX_EXTRA_LIBS =
 else
 GXX=g++
 ifneq ($(wildcard $(shell which g++-4 2>/dev/null | grep '^/')),)

@@ -1,3 +1,24 @@
+version 20110613:
+	- Fixed command-line parsing bug on Mac OS X
+	- Added support for the monodromy potential
+	- Added directional gradient outputs
+	- Added various outputs in physical units
+	- Added the option for full-precision outputs
+	- Added power-law background expansion
+	- Added the ability to read ICs from a file
+	- Fixed the effective mass calculation in the LE-style ICs
+	- Added an ICs mode cutoff 
+	- Added phidot and chidot stats to the stats file
+	- Added p (pressure) and w (e.o.s.) outputs to the energy file
+	- Fixed the calculation of the initial H_0 guess
+	- Fixed the calculation of program-unit phidot_0 and chidot_0 from
+		the physical-unit inputs
+	- Note: The input units of phidot_0 and chidot_0 were fixed; this makes all
+		parameters files with non-zero values for these parameters
+		incompatible with this new version!
+	- Added an informational message when the simulation ends because
+		the scale factor has passed the threshold value
+
 version 20100913:
 	- Fixed Defrost-style ICs normalization (again)
 	- Fixed H_0 computation (included phidot dependence)

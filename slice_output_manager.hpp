@@ -52,11 +52,12 @@ public:
 	slice_output_manager(field_size &fs_, model_params<R> &mp_, time_state<R> &ts_,
 		field<R> &phi_, field<R> &chi_, field<R> &phidot_, field<R> &chidot_,
 		grad_computer<R> &gc_, gpot_computer<R> &gpotc_,
-		int slicedim_ = 3, int slicelength_ = 0, int sliceskip_ = 1, bool sliceaverage_ = true)
+		int slicedim_ = 3, int slicelength_ = 0, int sliceskip_ = 1,
+		bool sliceaverage_ = true, bool sliceflt_ = true)
 		: fs(fs_), upfs(fs_.n), mp(mp_), ts(ts_), phi(phi_), chi(chi_),
 		phidot(phidot_), chidot(chidot_), gc(gc_), gpotc(gpotc_),
 		slicedim(slicedim_), slicelength(slicelength_ ? slicelength_ : fs_.n),
-		sliceskip(sliceskip_), sliceaverage(sliceaverage_), bin_idx(0) {}
+		sliceskip(sliceskip_), sliceaverage(sliceaverage_), sliceflt(sliceflt_), bin_idx(0) {}
 	
 public:
 	void add_outputter(std::string varname, var_func vf);
@@ -71,7 +72,7 @@ protected:
 	grad_computer<R> &gc;
 	gpot_computer<R> &gpotc;
 	int slicedim, slicelength, sliceskip;
-	bool sliceaverage;
+	bool sliceaverage, sliceflt;
 	int bin_idx;
 	std::vector< slice_outputter<R> * > outputters;
 };
